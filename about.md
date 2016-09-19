@@ -2,13 +2,10 @@
 layout: default
 title: "关于：About"
 ---
-###Basic Info
-My name is wangXi <sunny.w>, 23 yrs old, living in WuHan.
 
-###Links
-[GitHub] (<https://github.com/iwisunny>)  
+### Basic Info
+My name is Wang Xi, a simple programmer, living in WuHan.China
 
-<!-- Blog Comments -->
-<div class="media">
-  {% include comment.html %} 
-</div>
+### Links
+[My Resume](http://resume.github.io/?iwisunny)
+

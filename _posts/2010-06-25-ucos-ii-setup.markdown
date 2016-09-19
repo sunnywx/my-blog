@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "embedded"
+category: "linux"
 title:  "Windows XP下uCOS-II开发环境建立"
 tags: [uCOS-II]
 ---

@@ -15,16 +15,16 @@ layout: default
 <br/>
 <div style="margin-top:10px;margin-bottom:10px">
   {%if page.previous%}
-  <span class="next">
-    下篇：
+  <span class="prev">
+    上篇：
     <a href="{{page.previous.url}}">
       {{page.previous.title}}
     </a>
   </span>
   {%endif%} 
   {%if page.next%}
-  <span class="prev">
-    上篇：
+  <span class="next">
+    下篇：
     <a href="{{page.next.url}}">
       {{page.next.title}}
     </a>
@@ -33,8 +33,11 @@ layout: default
 </div>
 
 <!-- Blog Comments -->
-        <!--
 <div class="media">
-  {% include comment.html %} 
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="{{ page.id }}"
+       data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+  <!-- 多说评论框 end -->
+
+  {% include comment.html %}
 </div>
--->

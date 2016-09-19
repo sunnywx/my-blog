@@ -6,8 +6,8 @@ title : Atom Feed
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>{{ site.title }}</title>
- <link href="http://www.stevenpan.me/atom.xml" rel="self"/>
- <link href="http://www.stevenpan.me"/>
+ <link href="http://iwisunny.github.io/atom.xml" rel="self"/>
+ <link href="http://iwisunny.github.io"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <author>
    <name>{{ site.author.name }}</name>
@@ -17,7 +17,7 @@ title : Atom Feed
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://www.stevenpan.me{{ post.url }}"/>
+   <link href="http://iwisunny.github.io{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.production_url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>

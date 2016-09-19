@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "android"
-title:  "git分支开发、合并、删除等主要命令"
+title:  "git分支开发"
 tags: [git]
 ---
 ####1、克隆远程版本库。

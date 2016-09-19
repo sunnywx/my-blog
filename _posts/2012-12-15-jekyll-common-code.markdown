@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "network"
+category: "other"
 title:  "Jekyll常用列表，标签代码"
 tags: [Jekyll,列表,标签,代码]
 ---

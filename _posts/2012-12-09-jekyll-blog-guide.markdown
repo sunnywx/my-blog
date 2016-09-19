@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "network"
+category: "other"
 title:  "Windows下Jekyll指南"
 tags: [Jekyll,Windows]
 ---
