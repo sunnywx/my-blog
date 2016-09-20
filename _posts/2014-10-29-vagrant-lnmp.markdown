@@ -16,7 +16,7 @@ tags: ["vagrant", "lnmp"]
     例如安装 php-laravel homestead开发环境可以这样操作： vagrant box add laravel/homestead
     vagrant up
 
-####在vagrant 虚拟机(我的系统是 ubuntu-precise32) 中搭建nginx + php-fpm + mysql等开发环境
+####在vagrant(例如ubuntu precise32) 中搭建nginx, php, mysql
     apt-get update
     apt-get install vim
     apt-get install build-essential     //安装gcc, g++等构建环境
