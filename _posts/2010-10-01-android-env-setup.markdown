@@ -4,7 +4,6 @@ category: "android"
 title:  "Android开发环境搭建 "
 tags: [Android]
 ---
-几个月前就想试一试Android开发环境，当时觉得麻烦就没有动手。现在闲时把所用文件下载之后安装了一下，原来事实并没有想像中的那样烦琐。
 
 ###1.安装JDK，JRE是不够的。
 下载jdk-6u21-windows-i586.exe<br/>
@@ -25,5 +24,3 @@ tags: [Android]
 ####5.eclipse添加Android SDK路径。
 Windows>Preference>Android>Android SDK设置为D:\Androidand\sdk<br/>
 大致就完成了，结下来就可以在eclipse开发Android应用程序了。
-
-原文：<http://blog.chinaunix.net/uid-22985736-id-130137.html>

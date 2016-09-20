@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "android"
+category: "web"
 title:  "git分支开发"
 tags: [git]
 ---
