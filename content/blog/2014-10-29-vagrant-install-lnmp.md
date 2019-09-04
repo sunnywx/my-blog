@@ -5,13 +5,13 @@ date: "2014-10-29T22:12:03.284Z"
 category: note
 ---
 
-#### 安装vagrant
+#### 安装 vagrant
 
-1. 安装[virtualbox](https://www.virtualbox.org/wiki/Downloads) 
-2. 下载最新的[vagrant](http://downloads.vagrantup.com/) 
-3. 下载打包的 linux系统 [http://www.vagrantbox.es/](http://www.vagrantbox.es/) 
+1. 安装[virtualbox](https://www.virtualbox.org/wiki/Downloads)
+2. 下载最新的[vagrant](http://downloads.vagrantup.com/)
+3. 下载打包的 linux 系统 [http://www.vagrantbox.es/](http://www.vagrantbox.es/)
 
-#### 启动vagrant
+#### 启动 vagrant
 
 ```shell
 vagrant init
@@ -20,8 +20,7 @@ vagrant box add [ubuntu-precise32] //选择你下载到本地的vagrant box 或�
 vagrant up
 ```
 
-
-#### 在vagrant(例如ubuntu precise32) 中搭建nginx, php, mysql
+#### 在 vagrant(例如 ubuntu precise32) 中搭建 nginx, php, mysql
 
 ```shell
 apt-get update
@@ -56,4 +55,3 @@ mv composer.phar /usr/local/bin/composer
 //安装node.js
 apt-get install nodejs
 ```
- 

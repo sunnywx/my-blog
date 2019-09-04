@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
   },
   "homepage": "https://github.com/iwisunny/iwisunny.github.io#readme",
@@ -54,6 +56,13 @@
     "serve": "gatsby serve",
     "prod:serve": "gatsby clean && gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,scss,css}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
