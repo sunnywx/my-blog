@@ -19,8 +19,6 @@
     "gatsby-remark-copy-linked-files": "^2.1.14",
     "gatsby-remark-images": "^3.1.20",
     "gatsby-remark-prismjs": "^3.3.12",
-    "gatsby-remark-responsive-iframe": "^2.2.11",
-    "gatsby-remark-smartypants": "^2.1.7",
     "gatsby-source-filesystem": "^2.1.11",
     "gatsby-transformer-remark": "^2.6.21",
     "gatsby-transformer-sharp": "^2.2.13",
@@ -54,6 +52,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "prod:serve": "gatsby clean && gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
     "deploy": "gatsby build && gh-pages -d public -b master"
   }

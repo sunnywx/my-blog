@@ -5430,27 +5430,6 @@ gatsby-remark-prismjs@^3.3.12:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-responsive-iframe@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.npm.taobao.org/gatsby-remark-responsive-iframe/download/gatsby-remark-responsive-iframe-2.2.11.tgz#2043c794241366e9152fdb7780e5146d2a4a7d76"
-  integrity sha1-IEPHlCQTZukVL9t3gOUUbSpKfXY=
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    bluebird "^3.5.5"
-    cheerio "^1.0.0-rc.3"
-    lodash "^4.17.15"
-    unist-util-visit "^1.4.1"
-
-gatsby-remark-smartypants@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.npm.taobao.org/gatsby-remark-smartypants/download/gatsby-remark-smartypants-2.1.7.tgz#e8655825f0d2c24fc3001b77486a2faa5668ee8a"
-  integrity sha1-6GVYJfDSwk/DABt3SGovqlZo7oo=
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    retext "^5.0.0"
-    retext-smartypants "^3.0.3"
-    unist-util-visit "^1.4.1"
-
 gatsby-source-filesystem@^2.1.11:
   version "2.1.19"
   resolved "https://registry.npm.taobao.org/gatsby-source-filesystem/download/gatsby-source-filesystem-2.1.19.tgz#7fbe258ddd7d2feb0393c58af71b304798bf25a2"
@@ -10695,38 +10674,6 @@ retext-english@^3.0.3:
     parse-english "^4.0.0"
     unherit "^1.0.4"
 
-retext-latin@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.npm.taobao.org/retext-latin/download/retext-latin-2.0.3.tgz#38dd8a42a96fb02a38e077e02f041ad7e67ee094"
-  integrity sha1-ON2KQqlvsCo44HfgLwQa1+Z+4JQ=
-  dependencies:
-    parse-latin "^4.0.0"
-    unherit "^1.0.4"
-
-retext-smartypants@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.npm.taobao.org/retext-smartypants/download/retext-smartypants-3.0.3.tgz#9c982dcc210ae3bb36f4bc46aae802798fce43f9"
-  integrity sha1-nJgtzCEK47s29LxGqugCeY/OQ/k=
-  dependencies:
-    nlcst-to-string "^2.0.0"
-    unist-util-visit "^1.0.0"
-
-retext-stringify@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.npm.taobao.org/retext-stringify/download/retext-stringify-2.0.3.tgz#d39a258c4da42fc8d05abcdcf8327fdfb1558571"
-  integrity sha1-05oljE2kL8jQWrzc+DJ/37FVhXE=
-  dependencies:
-    nlcst-to-string "^2.0.0"
-
-retext@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npm.taobao.org/retext/download/retext-5.0.0.tgz#5d9018c4a677d6103c142362d76f50eb1d398bf6"
-  integrity sha1-XZAYxKZ31hA8FCNi129Q6x05i/Y=
-  dependencies:
-    retext-latin "^2.0.0"
-    retext-stringify "^2.0.0"
-    unified "^6.0.0"
-
 retry@^0.12.0:
   version "0.12.0"
   resolved "https://registry.npm.taobao.org/retry/download/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
@@ -12259,7 +12206,7 @@ unicode-property-aliases-ecmascript@^1.0.4:
   resolved "https://registry.npm.taobao.org/unicode-property-aliases-ecmascript/download/unicode-property-aliases-ecmascript-1.0.5.tgz#a9cc6cc7ce63a0a3023fc99e341b94431d405a57"
   integrity sha1-qcxsx85joKMCP8meNBuUQx1AWlc=
 
-unified@^6.0.0, unified@^6.2.0:
+unified@^6.2.0:
   version "6.2.0"
   resolved "https://registry.npm.taobao.org/unified/download/unified-6.2.0.tgz#7fbd630f719126d67d40c644b7e3f617035f6dba"
   integrity sha1-f71jD3GRJtZ9QMZEt+P2FwNfbbo=
