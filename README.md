@@ -1,8 +1,18 @@
-my github page
----
+my blog
+===
 
-> Personal Blog powered by Jekyll&amp;Github
 
-## 1.local dev
-- gem install jekyll
-- jekyll serve -w --force_polling
+> wangxi's blog, powered by gatsbyjs
+
+
+## Build
+
+```
+gatsby build
+```
+
+
+
+## License
+
+MIT
