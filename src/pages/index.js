@@ -1,10 +1,29 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
+import Paper from "@material-ui/core/Paper"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+
+const Article = styled(Paper)`
+  padding: 10px 20px;
+  margin-bottom: 15px;
+
+  header {
+    > h3 {
+      margin-top: 10px;
+    }
+  }
+
+  section {
+    > p {
+      margin-bottom: 1rem;
+    }
+  }
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,7 +38,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug}>
+            <Article key={node.fields.slug}>
               <header>
                 <h3
                   style={{
@@ -39,7 +58,7 @@ class BlogIndex extends React.Component {
                   }}
                 />
               </section>
-            </article>
+            </Article>
           )
         })}
       </Layout>

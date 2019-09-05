@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `WangXi's Blog`,
+    title: `WangXi`,
     author: `wangxi`,
     description: `Thinking in X`,
     siteUrl: `https://iwisunny.github.io`,
@@ -119,5 +119,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }
