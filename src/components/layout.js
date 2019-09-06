@@ -1,11 +1,46 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import Helmet from "react-helmet"
-import Container from "@material-ui/core/Container"
+import { throttle } from "underscore"
 
 import Header from "./header"
 
+import { device } from "../config/device-size"
+
+const scrollThreshold = 100
+
 class Layout extends React.Component {
+  state = {
+    hideHeader: false,
+  }
+
+  get scrollTop() {
+    return window.pageYOffset || document.documentElement.scrollTop
+  }
+
+  componentDidMount() {
+    this.lastScrollY = this.scrollTop
+    this.throttleScroll = throttle(this.handleScroll, 50)
+    document.addEventListener("scroll", this.throttleScroll)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("scroll", this.throttleScroll)
+  }
+
+  handleScroll = e => {
+    const isScrollDown = this.lastScrollY < this.scrollTop
+    this.lastScrollY = this.scrollTop
+
+    if (isScrollDown) {
+      if (this.scrollTop > scrollThreshold) {
+        this.setState({ hideHeader: true })
+      }
+    } else {
+      this.setState({ hideHeader: false })
+    }
+  }
+
   render() {
     const { title, children } = this.props
 
@@ -18,12 +53,9 @@ class Layout extends React.Component {
           />
         </Helmet>
 
-        <Header title={title} />
-        <StyledContainer>{children}</StyledContainer>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
+        <Header title={title} hide={this.state.hideHeader} />
+        <Container>{children}</Container>
+        <Footer>© {new Date().getFullYear()}, Built with ❤️</Footer>
       </Fragment>
     )
   }
@@ -31,9 +63,16 @@ class Layout extends React.Component {
 
 export default Layout
 
-const StyledContainer = styled(Container)`
+const Container = styled.main`
   position: relative;
-  top: 70px;
+  top: 60px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  @media ${device.laptop} {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `
 
 const Footer = styled.footer`
@@ -43,8 +82,4 @@ const Footer = styled.footer`
   transform: translateY(80px);
   display: flex;
   justify-content: center;
-
-  > a {
-    margin-left: 5px;
-  }
 `

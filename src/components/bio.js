@@ -33,7 +33,7 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <Avatar>
+    <Wrap>
       <Img
         alt={author}
         fixed={data.avatar.childImageSharp.fixed}
@@ -55,12 +55,12 @@ const Bio = () => {
           You should follow him on Twitter
         </a>
       </p>
-    </Avatar>
+    </Wrap>
   )
 }
 
 export default Bio
 
-const Avatar = styled.div`
+const Wrap = styled.div`
   display: flex;
 `

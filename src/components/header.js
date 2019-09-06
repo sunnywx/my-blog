@@ -3,29 +3,20 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import IconButton from "@material-ui/core/IconButton"
-import MenuIcon from "@material-ui/icons/Menu"
-
 class Header extends Component {
   static propTypes = {
     title: PropTypes.string,
+    hide: PropTypes.bool,
   }
 
   render() {
-    const { title } = this.props
+    const { title, hide } = this.props
 
     return (
-      <Wrapper>
-        <Toolbar>
-          <IconButton edge="start">
-            <MenuIcon />
-          </IconButton>
-          <Title>
-            <Link to="/">{title}</Link>
-          </Title>
-        </Toolbar>
+      <Wrapper hide={hide}>
+        <Title>
+          <Link to="/">{title}</Link>
+        </Title>
       </Wrapper>
     )
   }
@@ -33,14 +24,26 @@ class Header extends Component {
 
 export default Header
 
-const Wrapper = styled(AppBar)`
-  height: 64px;
+const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: #3f51b5;
+  z-index: 10;
+  box-shadow: 0 1px 2px 1px rgb(63, 81, 181, 0.3);
+  transition: all 0.3s ease-in-out;
+  ${({ hide }) =>
+    hide &&
+    `
+    top: -50px;
+  `}
 `
 
 const Title = styled.h1`
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 500;
+  margin: 0 auto;
+  font-weight: 200;
+  padding-left: 1rem;
 
   > a {
     text-decoration: none;

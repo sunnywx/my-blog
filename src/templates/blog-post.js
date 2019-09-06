@@ -1,10 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -18,47 +19,17 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <article>
-          <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-              }}
-            >
-              {post.frontmatter.date}
-            </p>
-          </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          <footer>
-            <Bio />
-          </footer>
-        </article>
+        <Article>
+          <Title>
+            <h1>{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+          </Title>
+          <Body dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Bio />
+        </Article>
 
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
+        <Paginator>
+          <ul>
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
@@ -74,7 +45,7 @@ class BlogPostTemplate extends React.Component {
               )}
             </li>
           </ul>
-        </nav>
+        </Paginator>
       </Layout>
     )
   }
@@ -100,5 +71,27 @@ export const pageQuery = graphql`
         description
       }
     }
+  }
+`
+
+const Article = styled.article``
+const Title = styled.header`
+  > h1 {
+    margin-top: ${rhythm(1)};
+    margin-bottom: 0;
+  }
+  > p {
+  }
+`
+const Body = styled.section`
+  margin-bottom: ${rhythm(1)};
+`
+const Paginator = styled.nav`
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
   }
 `

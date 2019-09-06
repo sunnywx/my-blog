@@ -1,17 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-import Paper from "@material-ui/core/Paper"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import Card from "../components/base/card"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const Article = styled(Paper)`
-  padding: 10px 20px;
-  margin-bottom: 15px;
-
+const Article = styled(Card)`
   header {
     > h3 {
       margin-top: 10px;
