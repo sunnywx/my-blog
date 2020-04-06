@@ -48,8 +48,8 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in WuHan China
-        as a programmer. Focus on JavaScript, React, web related and more.
+        Written by <strong>{author}</strong> who lives and works in China as a
+        programmer. Focus on JavaScript, React, web related and more.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
           You should follow him on Twitter

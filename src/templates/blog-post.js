@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-class BlogPostTemplate extends React.Component {
+export default class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -19,6 +19,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
+
         <Article>
           <Title>
             <h1>{post.frontmatter.title}</h1>
@@ -51,8 +52,6 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -75,6 +74,7 @@ export const pageQuery = graphql`
 `
 
 const Article = styled.article``
+
 const Title = styled.header`
   > h1 {
     margin-top: ${rhythm(1)};

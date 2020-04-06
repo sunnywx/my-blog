@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `WangXi`,
-    author: `wangxi`,
+    author: `sunnywang`,
     description: `Thinking in X`,
     siteUrl: `https://iwisunny.github.io`,
     social: {
@@ -33,7 +33,16 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
           `gatsby-remark-copy-linked-files`,
         ],
       },
@@ -108,7 +117,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#3f51b5`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon.png`,
       },
     },
     // `gatsby-plugin-offline`,

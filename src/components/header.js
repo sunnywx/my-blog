@@ -33,11 +33,7 @@ const Wrapper = styled.div`
   z-index: 10;
   box-shadow: 0 1px 2px 1px rgb(63, 81, 181, 0.3);
   transition: all 0.3s ease-in-out;
-  ${({ hide }) =>
-    hide &&
-    `
-    top: -50px;
-  `}
+  ${({ hide }) => hide && `top: -50px;`}
 `
 
 const Title = styled.h1`

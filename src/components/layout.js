@@ -1,17 +1,21 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import Helmet from "react-helmet"
-import { throttle } from "underscore"
+import { throttle } from "lodash"
 
 import Header from "./header"
-
 import { device } from "../config/device-size"
 
 const scrollThreshold = 100
 
 class Layout extends React.Component {
-  state = {
-    hideHeader: false,
+  constructor(props) {
+    super(props)
+    this.state = {
+      hideHeader: false,
+    }
+
+    this.throttleScroll = throttle(this.handleScroll, 100)
   }
 
   get scrollTop() {
@@ -20,7 +24,6 @@ class Layout extends React.Component {
 
   componentDidMount() {
     this.lastScrollY = this.scrollTop
-    this.throttleScroll = throttle(this.handleScroll, 50)
     document.addEventListener("scroll", this.throttleScroll)
   }
 
@@ -68,8 +71,10 @@ const Container = styled.main`
   top: 60px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  @media ${device.laptop} {
-    max-width: 1280px;
+  max-width: 90%;
+
+  @media ${device.desktop} {
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
   }

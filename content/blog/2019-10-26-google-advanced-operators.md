@@ -1,8 +1,8 @@
 ---
-category: tooling
-title: google搜索算子
+title: google 搜索运算符
 description: "使用运算符提升google搜索效率"
-date: "2015-10-26T00:12:03.284Z"
+date: "2019-10-26T00:12:03.284Z"
+category: tooling
 tags: ["google search", "advanced operator"]
 ---
 

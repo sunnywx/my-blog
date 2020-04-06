@@ -2,27 +2,12 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Card from "../components/base/card"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const Article = styled(Card)`
-  header {
-    > h3 {
-      margin-top: 10px;
-    }
-  }
-
-  section {
-    > p {
-      margin-bottom: 1rem;
-    }
-  }
-`
-
-class BlogIndex extends React.Component {
+export default class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -31,7 +16,6 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -63,7 +47,19 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+const Article = styled(Card)`
+  header {
+    > h3 {
+      margin-top: 10px;
+    }
+  }
+
+  section {
+    > p {
+      margin-bottom: 1rem;
+    }
+  }
+`
 
 export const pageQuery = graphql`
   query {
