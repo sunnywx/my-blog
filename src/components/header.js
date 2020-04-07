@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import IconGithub from "assets/github.svg"
+import IconRss from "assets/rss.svg"
 
 class Header extends Component {
   static propTypes = {
@@ -17,6 +19,18 @@ class Header extends Component {
         <Title>
           <Link to="/">{title}</Link>
         </Title>
+        <NavMenu>
+          <li>
+            <a href="https://github.com/iwisunny">
+              <IconGithub />
+            </a>
+          </li>
+          <li>
+            <Link to="/rss.xml">
+              <IconRss style={{ position: "relative", top: "3px" }} />
+            </Link>
+          </li>
+        </NavMenu>
       </Wrapper>
     )
   }
@@ -27,6 +41,11 @@ export default Header
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 50px;
   background: #3f51b5;
@@ -37,13 +56,26 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
-  margin: 0 auto;
   font-weight: 200;
-  padding-left: 1rem;
+  margin: 0;
 
   > a {
     text-decoration: none;
     color: white;
     box-shadow: none;
+  }
+`
+
+const NavMenu = styled.ul`
+  height: 100%;
+  margin-bottom: 0;
+  line-height: 50px;
+  list-style-type: none;
+
+  > li {
+    position: relative;
+    top: 3px;
+    float: left;
+    margin-left: 10px;
   }
 `

@@ -26,8 +26,6 @@ npm i --unsafe-perm --build-from-source --verbose
 
 ```
 
----
-
 改进之处
 
 - 在 markdown 内引入 `png`图片，gatsby 会编译出错 (可能是 libvips 编译的参数不对， 或者`gatsby-plugin-sharp`的 bug)

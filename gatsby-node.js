@@ -5,7 +5,11 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     devtool: stage === "develop" ? "cheap-module-eval-source-map" : false,
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      modules: [
+        path.resolve(__dirname, "src"),
+        path.resolve(__dirname, "content"),
+        "node_modules",
+      ],
     },
   })
 }
@@ -63,7 +67,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode, trailingSlash: false })
+
     createNodeField({
       name: `slug`,
       node,

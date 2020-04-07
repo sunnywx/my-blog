@@ -1,3 +1,6 @@
+const themeColor = "#3f51b5"
+const bgColor = "#fff"
+
 module.exports = {
   siteMetadata: {
     title: `WangXi`,
@@ -114,8 +117,8 @@ module.exports = {
         name: `WangXi Blog`,
         short_name: `WangXi`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#3f51b5`,
+        background_color: bgColor,
+        theme_color: themeColor,
         display: `minimal-ui`,
         icon: `content/assets/favicon.png`,
       },
@@ -129,5 +132,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        color: themeColor,
+        showSpinner: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /content\/assets/,
+        },
+      },
+    },
   ],
 }
