@@ -1,5 +1,5 @@
 ---
-title: google 搜索运算符
+title: google搜索算子
 description: "使用运算符提升google搜索效率"
 date: "2019-10-26T00:12:03.284Z"
 category: tooling

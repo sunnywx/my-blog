@@ -54,12 +54,12 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 8080",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "gatsby clean && gatsby build && gatsby serve",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "deploy": "gatsby build && npx gh-pages -d public -b master",
+    "deploy": "gatsby clean && gatsby build && npx gh-pages -d public -b master",
     "precommit": "lint-staged"
   },
   "lint-staged": {

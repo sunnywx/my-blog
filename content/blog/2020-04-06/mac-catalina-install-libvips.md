@@ -28,8 +28,9 @@ npm i --unsafe-perm --build-from-source --verbose
 
 改进之处
 
-- 在 markdown 内引入 `png`图片，gatsby 会编译出错 (可能是 libvips 编译的参数不对， 或者`gatsby-plugin-sharp`的 bug)
-- 用 yarn 安装可以 resolution 到 `sharp: 0.24`
+- 在 markdown 内引入 png 图片，gatsby 有时会编译出错 (可能是 libvips 编译的参数不对， 或者`gatsby-plugin-sharp`的 bug)
+- `brew info vips` 显示的 vips 版本始终是 8.8.x，尝试升级 brew，拉取`brew/versions`仓库也报错，可能是`brew/core`的 bug
+- 等 brew 官方发新版，最简单的就是通过`brew install vips`安装 libvips
 
 参考文档
 
