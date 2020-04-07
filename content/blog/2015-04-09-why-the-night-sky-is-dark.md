@@ -1,9 +1,8 @@
 ---
 title: 夜空为什么是黑色的?
-description: "很常见的事物中也蕴含了深刻的道理.."
-date: "2015-04-09T00:12:03.284Z"
-category: reading
-tags: ["universe", "life", "thinking"]
+description: 一本正经的瞎扯，很常见的事物中也蕴含着深刻的道理..
+date: 2015-04-09T00:12:03.284Z
+tags: [life, thinking]
 ---
 
 > 夜空总给我一种神秘的感觉，似乎要告诉我什么，像一位睿智的老者、默默的友人……

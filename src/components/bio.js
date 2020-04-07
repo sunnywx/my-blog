@@ -31,7 +31,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <Wrap>
       <Img
@@ -51,9 +51,9 @@ const Bio = () => {
         Written by <strong>{author}</strong> who lives and works in China as a
         programmer. Focus on JavaScript, React, web related and more.
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+        {/*<a href={`https://twitter.com/${social.twitter}`}>*/}
+        {/*  You should follow him on Twitter*/}
+        {/*</a>*/}
       </p>
     </Wrap>
   )

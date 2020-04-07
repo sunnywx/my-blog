@@ -2,6 +2,7 @@
 title: django webpack hot reload
 description: django作为后端的webpack热加载的一种实现
 date: 2020-04-07T08:06:46.370Z
+tags: [web]
 ---
 
 ## 1. 设置后端环境

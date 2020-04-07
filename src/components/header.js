@@ -21,7 +21,11 @@ class Header extends Component {
         </Title>
         <NavMenu>
           <li>
-            <a href="https://github.com/iwisunny">
+            <a
+              href="https://github.com/iwisunny"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconGithub />
             </a>
           </li>
@@ -74,8 +78,8 @@ const NavMenu = styled.ul`
 
   > li {
     position: relative;
-    top: 3px;
+    top: 5px;
     float: left;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 `

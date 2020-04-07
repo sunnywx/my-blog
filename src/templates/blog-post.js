@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Tags from "components/tags"
 import { rhythm } from "../utils/typography"
 
 export default class BlogPostTemplate extends React.Component {
@@ -23,7 +24,12 @@ export default class BlogPostTemplate extends React.Component {
         <Article>
           <Title>
             <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
+            <p>
+              <span className="time">
+                {new Date(post.frontmatter.date).toLocaleDateString()}
+              </span>
+              <Tags tags={post.frontmatter.tags} />
+            </p>
           </Title>
           <Body dangerouslySetInnerHTML={{ __html: post.html }} />
           <Bio />
@@ -68,6 +74,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }
@@ -76,11 +83,16 @@ export const pageQuery = graphql`
 const Article = styled.article``
 
 const Title = styled.header`
+  margin-bottom: 1.5rem;
+
   > h1 {
     margin-top: ${rhythm(1)};
-    margin-bottom: 0;
   }
+
   > p {
+    > .time {
+      margin-right: 20px;
+    }
   }
 `
 const Body = styled.section`

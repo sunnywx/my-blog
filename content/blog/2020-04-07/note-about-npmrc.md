@@ -2,6 +2,7 @@
 title: npmrc常用配置
 description: 切换npm源，加入私有仓库，加快node-sass安装...
 date: 2020-04-07T10:06:46.370Z
+tags: [npm, tooling]
 ---
 
 在平时的 web 开发中，常用的一些 npmrc 配置

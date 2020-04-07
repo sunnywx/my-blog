@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Card from "../components/base/card"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Tags from "components/tags"
 
 export default class BlogIndex extends React.Component {
   render() {
@@ -18,27 +18,26 @@ export default class BlogIndex extends React.Component {
         <SEO title="All posts" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          const tags = node.frontmatter.tags || []
+
           return (
             <Article key={node.fields.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
+              <h3>
+                <Link to={node.fields.slug}>{title}</Link>
+              </h3>
+
+              <Time>
+                <span className="time">
+                  {new Date(node.frontmatter.date).toLocaleDateString()}
+                </span>
+                <Tags tags={tags} />
+              </Time>
+
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
             </Article>
           )
         })}
@@ -48,16 +47,24 @@ export default class BlogIndex extends React.Component {
 }
 
 const Article = styled(Card)`
-  header {
-    > h3 {
-      margin-top: 10px;
+  > h3 {
+    margin-bottom: 1rem;
+    > a {
+      text-decoration: none;
     }
   }
 
-  section {
-    > p {
-      margin-bottom: 1rem;
-    }
+  > p {
+    margin: 10px 0;
+  }
+`
+
+const Time = styled.span`
+  display: inline-block;
+  font-size: 13px;
+
+  > .time {
+    margin-right: 20px;
   }
 `
 
@@ -79,6 +86,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

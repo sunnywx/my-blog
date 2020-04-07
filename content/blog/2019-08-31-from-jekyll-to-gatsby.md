@@ -1,8 +1,8 @@
 ---
 title: From jekyll to gatsby
-description: "happy blogging.."
-date: "2019-08-31T22:12:03.284Z"
-category: web
+description: happy blogging :-)
+date: 2019-08-31T22:12:03.284Z
+tags: [misc]
 ---
 
 While hosting personal site on github pages, jekyll is fine.

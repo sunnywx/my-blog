@@ -2,6 +2,7 @@
 title: Mac 10.15 安装 libvips
 description: mac安装gatsby图片处理依赖的libvips和sharp的问题记录
 date: 2020-04-06T08:06:46.370Z
+tags: [mac]
 ---
 
 gatsby 的图片处理库`sharp`很方便，但是 sharp 依赖 c++编写的 `libvips`。
