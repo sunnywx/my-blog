@@ -10,11 +10,15 @@ import { rhythm } from "../utils/typography"
 import { MdAccessTime as IconTime } from "react-icons/md"
 import { ImCircleLeft, ImCircleRight } from "react-icons/im"
 
+import "gitalk/dist/gitalk.css"
+import GitalkComponent from "gitalk/dist/gitalk-component"
+
 export default class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const { path } = this.props
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -70,6 +74,25 @@ export default class BlogPostTemplate extends React.Component {
             </li>
           </ul>
         </Paginator>
+
+        {/* gatsby build ssr code will throw window not defined */}
+        {typeof window !== "undefined" && (
+          <GitalkComponent
+            options={{
+              clientID: "e6529ed76f49a1c63227",
+              clientSecret: "105ae6c9c257d966e42020b5babd8d11b4b35fb6",
+              repo: "iwisunny.github.io",
+              owner: "iwisunny",
+              admin: ["iwisunny"],
+              id: path
+                .split("/")
+                .pop()
+                .substring(0, 49), // id length less than 50
+              title: path.split("/").pop(),
+              distractionFreeMode: false,
+            }}
+          />
+        )}
       </Layout>
     )
   }
