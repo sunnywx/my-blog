@@ -8,6 +8,7 @@
     "url": "https://github.com/iwisunny/iwisunny.github.io/issues"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-feed": "^2.3.7",
@@ -29,6 +30,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.11.0",
     "react-typography": "^0.16.19",
     "styled-components": "^4.3.2",
     "typography": "^0.16.19",
@@ -54,7 +56,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -p 5000",
+    "dev": "gatsby develop -p 8001",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "gatsby clean && gatsby build && gatsby serve",
     "serve": "gatsby serve",

@@ -7,6 +7,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tags from "components/tags"
 import { rhythm } from "../utils/typography"
+import { MdAccessTime as IconTime } from "react-icons/md"
+import { ImCircleLeft, ImCircleRight } from "react-icons/im"
 
 export default class BlogPostTemplate extends React.Component {
   render() {
@@ -26,6 +28,7 @@ export default class BlogPostTemplate extends React.Component {
             <h1>{post.frontmatter.title}</h1>
             <p>
               <span className="time">
+                <IconTime style={{ marginRight: "5px" }} />
                 {new Date(post.frontmatter.date).toLocaleDateString()}
               </span>
               <Tags tags={post.frontmatter.tags} />
@@ -39,15 +42,29 @@ export default class BlogPostTemplate extends React.Component {
           <ul>
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                <Link
+                  to={`/blog${previous.fields.slug}`}
+                  rel="prev"
+                  className="btn-prev"
+                >
+                  <ImCircleLeft />{" "}
+                  <span style={{ marginLeft: "10px" }}>
+                    {previous.frontmatter.title}
+                  </span>
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                <Link
+                  to={`/blog${next.fields.slug}`}
+                  rel="next"
+                  className="btn-next"
+                >
+                  <span style={{ marginRight: "10px" }}>
+                    {next.frontmatter.title}
+                  </span>{" "}
+                  <ImCircleRight />
                 </Link>
               )}
             </li>
@@ -59,7 +76,7 @@ export default class BlogPostTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
@@ -68,7 +85,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 200)
       html
       frontmatter {
         title
@@ -92,6 +109,9 @@ const Title = styled.header`
   > p {
     > .time {
       margin-right: 20px;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
     }
   }
 `
@@ -105,5 +125,17 @@ const Paginator = styled.nav`
     justify-content: space-between;
     list-style: none;
     padding: 0;
+    margin-left: 0;
+
+    li {
+      > a {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        svg {
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
 `

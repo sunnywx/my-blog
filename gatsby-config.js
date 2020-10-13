@@ -3,12 +3,13 @@ const bgColor = "#fff"
 
 module.exports = {
   siteMetadata: {
-    title: `WangXi`,
-    author: `sunnywang`,
-    description: `Thinking in X`,
+    title: `sunny.w`,
+    author: `sunny wang`,
+    description: `Every memo in web, sunnywang's blog`,
     siteUrl: `https://iwisunny.github.io`,
     social: {
       twitter: `iamwangxi`,
+      github: "iwisunny",
     },
   },
   plugins: [
@@ -106,7 +107,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "WangXi's RSS Feed",
+            title: "SunnyWang's RSS Feed",
           },
         ],
       },
@@ -114,8 +115,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `WangXi Blog`,
-        short_name: `WangXi`,
+        name: `SunnyWang's Blog`,
+        short_name: `SunnyWang`,
         start_url: `/`,
         background_color: bgColor,
         theme_color: themeColor,

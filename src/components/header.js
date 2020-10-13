@@ -1,43 +1,63 @@
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Link } from "gatsby"
-import IconGithub from "assets/github.svg"
-import IconRss from "assets/rss.svg"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { VscGithub, VscTwitter, VscRss } from "react-icons/vsc"
 
-class Header extends Component {
-  static propTypes = {
-    title: PropTypes.string,
-    hide: PropTypes.bool,
-  }
+const Header = ({ title, hide }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          social {
+            twitter
+            github
+          }
+        }
+      }
+    }
+  `)
 
-  render() {
-    const { title, hide } = this.props
+  const { social } = data.site.siteMetadata
 
-    return (
-      <Wrapper hide={hide}>
-        <Title>
-          <Link to="/">{title}</Link>
-        </Title>
-        <NavMenu>
-          <li>
-            <a
-              href="https://github.com/iwisunny"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IconGithub />
-            </a>
-          </li>
-          <li>
-            <Link to="/rss.xml">
-              <IconRss style={{ position: "relative", top: "3px" }} />
-            </Link>
-          </li>
-        </NavMenu>
-      </Wrapper>
-    )
-  }
+  return (
+    <Wrapper hide={hide}>
+      <Title>
+        <Link to="/">{title}</Link>
+      </Title>
+
+      <NavMenu>
+        <li>
+          <a
+            href={`https://github.com/${social.github}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <VscGithub />
+          </a>
+        </li>
+        <li>
+          <a
+            href={`https://twitter.com/${social.twitter}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <VscTwitter />
+          </a>
+        </li>
+        <li>
+          <Link to="/rss.xml">
+            <VscRss />
+          </Link>
+        </li>
+      </NavMenu>
+    </Wrapper>
+  )
+}
+
+Header.propTypes = {
+  title: PropTypes.string,
+  hide: PropTypes.bool,
 }
 
 export default Header
@@ -52,9 +72,10 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 50px;
-  background: #3f51b5;
+  background: #fdfdfd;
+  color: #000;
   z-index: 10;
-  box-shadow: 0 1px 2px 1px rgb(63, 81, 181, 0.3);
+  box-shadow: 1px 0 5px rgb(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
   ${({ hide }) => hide && `top: -50px;`}
 `
@@ -65,7 +86,7 @@ const Title = styled.h1`
 
   > a {
     text-decoration: none;
-    color: white;
+    //color: white;
     box-shadow: none;
   }
 `

@@ -72,6 +72,7 @@ const Container = styled.main`
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   max-width: 90%;
+  min-height: calc(100vh - 100px);
 
   @media ${device.desktop} {
     max-width: 960px;

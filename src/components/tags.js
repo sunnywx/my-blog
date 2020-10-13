@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import IconTag from "assets/tag.svg"
+import { VscTag } from "react-icons/vsc"
 
 export default class Tags extends React.PureComponent {
   static propTypes = {
@@ -32,7 +32,7 @@ export default class Tags extends React.PureComponent {
     return (
       <Wrap>
         <span>
-          <IconTag style={{ width: "16px", height: "16px" }} />
+          <VscTag style={{ width: "16px", height: "16px" }} />
         </span>
         {this.renderTags()}
       </Wrap>

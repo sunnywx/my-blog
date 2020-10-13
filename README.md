@@ -1,18 +1,35 @@
-# my blog
+# my awesome blog
 
-> wangxi's blog, powered by gatsbyjs
+> sunnywang's blog, powered by gatsbyjs
 
-## Install
+## Usage
 
 ```
 npm i
+npm start
 ```
 
-## Build
+## Develop
 
 ```
-gatsby build
+npm run dev
 ```
+
+## Deploy
+
+```shell script
+npm run deploy
+```
+
+> Use `gh-pages` tool push `public` files to `master` branch
+
+## TODO
+
+- [x] Blog list add pagination
+- [ ] Article page add share links
+- [ ] Article page add comment
+- [ ] Add tags page
+- [ ] Data fetching use external service as api backend
 
 ## Troubleshooting
 

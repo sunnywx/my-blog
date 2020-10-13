@@ -1,6 +1,6 @@
 ---
-title: 夜空为什么是黑色的?
-description: 一本正经的瞎扯，很常见的事物中也蕴含着深刻的道理..
+title: why the night sky is dark
+description: 一本正经的瞎扯，常见的事物中也蕴含着深刻的道理...
 date: 2015-04-09T00:12:03.284Z
 tags: [life, thinking]
 ---

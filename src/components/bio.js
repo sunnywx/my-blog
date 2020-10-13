@@ -31,7 +31,7 @@ const Bio = () => {
     }
   `)
 
-  const { author } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata
   return (
     <Wrap>
       <Img
@@ -49,11 +49,13 @@ const Bio = () => {
       />
       <p>
         Written by <strong>{author}</strong> who lives and works in China as a
-        programmer. Focus on JavaScript, React, web related and more.
+        programmer currently. Focus on JavaScript, Python, React and Web
+        related. Also learning container tech (docker, k8s, cloud native).
+        Interested in Rust and WebAssembly.
         {` `}
-        {/*<a href={`https://twitter.com/${social.twitter}`}>*/}
-        {/*  You should follow him on Twitter*/}
-        {/*</a>*/}
+        <a href={`https://twitter.com/${social.twitter}`}>
+          You should follow him on Twitter
+        </a>
       </p>
     </Wrap>
   )

@@ -1,6 +1,6 @@
 ---
 title: From jekyll to gatsby
-description: happy blogging :-)
+description: 将旧博客从jekyll迁移到gatsby
 date: 2019-08-31T22:12:03.284Z
 tags: [misc]
 ---
