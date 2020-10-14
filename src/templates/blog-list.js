@@ -48,6 +48,7 @@ export const blogListQuery = graphql`
             title
             description
             tags
+            snapshot
           }
         }
       }

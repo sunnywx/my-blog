@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { VscGithub, VscTwitter, VscRss } from "react-icons/vsc"
+import { FaLinkedin } from "react-icons/fa"
 
 const Header = ({ title, hide }) => {
   const data = useStaticQuery(graphql`
@@ -12,6 +13,7 @@ const Header = ({ title, hide }) => {
           social {
             twitter
             github
+            linkedin
           }
         }
       }
@@ -43,6 +45,15 @@ const Header = ({ title, hide }) => {
             rel="noopener noreferrer"
           >
             <VscTwitter />
+          </a>
+        </li>
+        <li>
+          <a
+            href={`https://linkedin.com/in/${social.linkedin}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
           </a>
         </li>
         <li>

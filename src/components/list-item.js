@@ -4,10 +4,16 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Card from "./base/card"
 import Tags from "./tags"
+import { device } from "config/device-size"
 
 const ListItem = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
   const tags = node.frontmatter.tags || []
+  let { snapshot } = node.frontmatter
+
+  if (snapshot && typeof snapshot === "string") {
+    snapshot = [].concat(snapshot)
+  }
 
   return (
     <Article key={node.fields.slug}>
@@ -27,6 +33,14 @@ const ListItem = ({ node }) => {
           __html: node.frontmatter.description || node.excerpt,
         }}
       />
+
+      {snapshot && (
+        <div className="blog-snapshots">
+          {snapshot.map(pic => (
+            <img src={pic} alt="" />
+          ))}
+        </div>
+      )}
     </Article>
   )
 }
@@ -50,6 +64,17 @@ const Article = styled(Card)`
 
   > p {
     margin: 10px 0;
+  }
+
+  .blog-snapshots {
+    display: flex;
+
+    > img {
+      margin-right: 10px;
+      @media ${device.desktop} {
+        width: 30%;
+      }
+    }
   }
 `
 

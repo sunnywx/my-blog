@@ -1,9 +1,15 @@
 ---
 title: why the night sky is dark
 description: 一本正经的瞎扯，常见的事物中也蕴含着深刻的道理...
-date: 2015-04-09T00:12:03.284Z
-tags: [life, thinking]
+date: 2015-04-09 12:03
+snapshot:
+  - /images/galaxy.jpg
+tags:
+  - life
+  - thinking
 ---
+
+![](/images/galaxy.jpg)
 
 > 夜空总给我一种神秘的感觉，似乎要告诉我什么，像一位睿智的老者、默默的友人……
 > 当你仰望它时内心有莫名的平静……

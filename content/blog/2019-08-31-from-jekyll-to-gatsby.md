@@ -1,8 +1,9 @@
 ---
 title: From jekyll to gatsby
 description: 将旧博客从jekyll迁移到gatsby
-date: 2019-08-31T22:12:03.284Z
-tags: [misc]
+date: 2019-08-31 22:12
+tags:
+  - misc
 ---
 
 While hosting personal site on github pages, jekyll is fine.

@@ -10,6 +10,7 @@ module.exports = {
     social: {
       twitter: `iamwangxi`,
       github: "iwisunny",
+      linkedin: "iamwangxi",
     },
   },
   plugins: [
@@ -53,12 +54,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     //trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-180563989-1`,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -140,13 +141,13 @@ module.exports = {
         showSpinner: true,
       },
     },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /content\/assets/,
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       include: /content\/assets/,
+    //     },
+    //   },
+    // },
   ],
 }

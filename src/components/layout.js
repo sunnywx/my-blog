@@ -84,7 +84,7 @@ const Container = styled.main`
 const Footer = styled.footer`
   position: relative;
   width: 100%;
-  bottom: 0;
+  bottom: 5px;
   transform: translateY(80px);
   display: flex;
   justify-content: center;

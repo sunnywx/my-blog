@@ -149,6 +149,7 @@ const Paginator = styled.nav`
     list-style: none;
     padding: 0;
     margin-left: 0;
+    margin-top: 20px;
 
     li {
       > a {

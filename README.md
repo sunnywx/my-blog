@@ -27,7 +27,7 @@ npm run deploy
 
 - [x] Blog list add pagination
 - [ ] Article page add share links
-- [ ] Article page add comment
+- [x] Article page add comment
 - [ ] Add tags page
 - [ ] Data fetching use external service as api backend
 

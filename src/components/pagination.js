@@ -73,12 +73,19 @@ export default class Pagination extends React.PureComponent {
   }
 
   renderLinkBtns() {
+    const { currentPage, numPages } = this.props
+
     return (
       <>
-        {Array.from({ length: this.props.numPages }).map((_, i) => {
+        {Array.from({ length: numPages }).map((_, i) => {
           let link = i === 0 ? `/blog` : `/blog/${i + 1}`
           return (
-            <li key={i}>
+            <li
+              key={i}
+              className={classnames({
+                active: currentPage === i + 1,
+              })}
+            >
               <Link to={link}>{i + 1}</Link>
             </li>
           )
@@ -124,6 +131,10 @@ const Paginator = styled.ul`
     &.disabled {
       cursor: not-allowed;
       background: lightgrey;
+    }
+
+    &.active {
+      background: #3962ff;
     }
 
     > a {
