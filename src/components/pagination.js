@@ -27,7 +27,8 @@ export default class Pagination extends React.PureComponent {
     if (currentPage <= 1) {
       return
     }
-    navigate(`/blog/${currentPage - 1}`)
+    const pg = currentPage - 1
+    navigate(pg === 1 ? `/blog` : `/blog/${pg}`)
   }
 
   handleNext = e => {
