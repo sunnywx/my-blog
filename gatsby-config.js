@@ -8,9 +8,10 @@ module.exports = {
     description: `Every memo in web, sunnywang's blog`,
     siteUrl: `https://iwisunny.github.io`,
     social: {
-      twitter: `iamwangxi`,
+      twitter: "iamwangxi",
       github: "iwisunny",
       linkedin: "iamwangxi",
+      zhihu: "wangxi",
     },
   },
   plugins: [

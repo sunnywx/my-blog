@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import dayjs from "dayjs"
 import Card from "./base/card"
 import Tags from "./tags"
 import { device } from "config/device-size"
@@ -23,7 +24,7 @@ const ListItem = ({ node }) => {
 
       <Time>
         <span className="time">
-          {new Date(node.frontmatter.date).toLocaleDateString()}
+          {dayjs(node.frontmatter.date).format(`YYYY/MM/DD HH:mm`)}
         </span>
         <Tags tags={tags} />
       </Time>

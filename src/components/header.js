@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { VscGithub, VscTwitter, VscRss } from "react-icons/vsc"
-import { FaLinkedin } from "react-icons/fa"
+import { FaLinkedin, FaZhihu } from "react-icons/fa"
 
 const Header = ({ title, hide }) => {
   const data = useStaticQuery(graphql`
@@ -14,6 +14,7 @@ const Header = ({ title, hide }) => {
             twitter
             github
             linkedin
+            zhihu
           }
         }
       }
@@ -54,6 +55,15 @@ const Header = ({ title, hide }) => {
             rel="noopener noreferrer"
           >
             <FaLinkedin />
+          </a>
+        </li>
+        <li>
+          <a
+            href={`https://zhihu.com/column/${social.zhihu}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaZhihu />
           </a>
         </li>
         <li>

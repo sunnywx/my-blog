@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
+import dayjs from "dayjs"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -33,7 +34,7 @@ export default class BlogPostTemplate extends React.Component {
             <p>
               <span className="time">
                 <IconTime style={{ marginRight: "5px" }} />
-                {new Date(post.frontmatter.date).toLocaleDateString()}
+                {dayjs(post.frontmatter.date).format("YYYY/MM/DD HH:mm")}
               </span>
               <Tags tags={post.frontmatter.tags} />
             </p>
@@ -112,7 +113,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         description
         tags
       }
