@@ -1,0 +1,8 @@
+node_modules
+/build
+/*.log
+
+.idea/
+
+/public/blog-data.json
+/public/chapters.json

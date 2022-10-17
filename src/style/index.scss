@@ -1,0 +1,40 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+	/*color: #444;*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.main {
+	position: relative;
+	top: 56px;
+	/*display: grid;*/
+	/*grid-template-columns: 240px 1fr;*/
+	/*grid-column-gap: 1rem;*/
+	display: flex;
+	height: calc(100% - var(--header-height));
+	/*gap: 1rem;*/
+
+	@media (max-width: 600px) {
+		top: var(--shrink-header-height);
+		height: calc(100% - var(--shrink-header-height));
+	}
+}
+
+.main > div:last-child {
+	flex: 1;
+	transition: all 0.5s ease;
+	overflow: auto;
+	padding: 1rem;
+}
