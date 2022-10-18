@@ -12,17 +12,20 @@
     "dev": "preact watch --no-sw",
     "lint": "eslint src",
     "test": "jest",
-    "dep:github": "npx gh-pages -d build -b main"
+    "dep:github": "npx gh-pages -d build -b master",
+    "dep:vps": "rsync -avz --delete build/ bwg:/var/www/html"
   },
   "dependencies": {
     "@preact/signals": "^1.1.1",
     "classnames": "^2.3.2",
+    "dayjs": "^1.11.5",
     "htm": "^3.1.1",
     "marked": "^4.1.1",
     "normalize.css": "^8.0.1",
     "preact": "^10.10.0",
     "preact-render-to-string": "^5.2.1",
     "preact-router": "^3.2.1",
+    "prismjs": "^1.29.0",
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
@@ -31,6 +34,7 @@
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "babel-plugin-prismjs": "^2.1.0",
     "cors": "^2.8.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-preact-pure": "^4.0.1",
@@ -40,6 +44,7 @@
     "gh-pages": "^4.0.0",
     "jest": "^27.5.1",
     "jest-preset-preact": "^4.0.5",
+    "js-yaml": "^4.1.0",
     "morgan": "^1.10.0",
     "preact-cli": "^3.4.0",
     "rimraf": "^3.0.2",

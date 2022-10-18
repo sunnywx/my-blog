@@ -109,4 +109,4 @@ module.exports = {
 
 ### 实际项目中的演示：
 
-![django webpack热加载](/images/django-webpack-hot-reload.jpg)
+![django webpack热加载](/assets/images/django-webpack-hot-reload.jpg)

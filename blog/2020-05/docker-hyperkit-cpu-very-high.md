@@ -10,4 +10,4 @@ snapshot:
 
 这样 `com.docker.hyperkit` 后续 cpu 占用不会超过 100%
 
-![](/images/docker-cpu.jpg)
+![](/assets/images/docker-cpu.jpg)

@@ -1,17 +1,24 @@
 $wid: 30ch;
+$bg-color: #fff;
 
 .nav {
   transition: all 0.5s ease;
   width: $wid;
-  background: #eee;
+  background: darken($bg-color, 10%);
   padding: 10px;
   overflow: auto;
   z-index: 20;
-  height: calc(100% - var(--header-height));
+  //height: calc(100% - var(--header-height));
 
   @media (max-width: 600px) {
     position: fixed;
     height: calc(100% - var(--shrink-header-height));
+  }
+
+  [data-theme="dark"] & {
+    background: var(--bg-dark);
+    color: var(--color-dark);
+    box-shadow: 1px 1px 6px 0 rgb(20 20 20 / 50%);
   }
 
   &.hidden {
@@ -33,9 +40,6 @@ $wid: 30ch;
         margin-top: 0;
         margin-left: -10px;
         margin-bottom: 10px;
-        &:hover{
-          background: #ddd;
-        }
       }
       > ul {
         list-style-type: square;
@@ -51,11 +55,8 @@ $wid: 30ch;
         li {
           line-height: 1.2;
           padding: 5px 0;
-          &.active {
+          &.active, &:hover {
             background: #dde194;
-          }
-          &:hover{
-            background: #ddd;
           }
 
           > a {

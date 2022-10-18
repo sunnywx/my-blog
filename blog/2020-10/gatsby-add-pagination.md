@@ -154,4 +154,4 @@ export const blogListQuery = graphql`
 ```
 
 最终的效果如图：
-![](/images/gatsby-pagination.jpg)
+![](/assets/images/gatsby-pagination.jpg)

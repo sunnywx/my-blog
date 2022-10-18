@@ -9,7 +9,7 @@ tags:
   - thinking
 ---
 
-![](/images/galaxy.jpg)
+![](/assets/images/galaxy.jpg)
 
 > 夜空总给我一种神秘的感觉，似乎要告诉我什么，像一位睿智的老者、默默的友人……
 > 当你仰望它时内心有莫名的平静……

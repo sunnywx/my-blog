@@ -12,6 +12,18 @@ function Header(){
 	const {sideMenu}=useContext(AppCtx)
 	// const dispose=effect(()=> {console.log('menu toggled: ', sideMenu.value)})
 
+	function toggleTheme(){
+		if(typeof window === 'undefined') return;
+
+		const doc=document.documentElement;
+		let mode=doc.getAttribute('data-theme') || 'light'
+		if(mode === 'light'){
+			doc.setAttribute('data-theme', 'dark')
+		} else {
+			doc.setAttribute('data-theme', 'light')
+		}
+	}
+
 	return (
 		<header class={style.header}>
 			<div>
@@ -23,12 +35,12 @@ function Header(){
 
 			<nav>
 				<div>
-					<Link activeClassName={style.active} href="/blog">Blogs</Link>
+					<Link activeClassName={style.active} href="/blogs">Blogs</Link>
 					<Link activeClassName={style.active} href="/tags">Tags</Link>
 					<Link activeClassName={style.active} href="/about">About</Link>
 				</div>
 				<div>
-					<span className={style.icon}><VscColorMode /></span>
+					<span className={style.icon} onClick={toggleTheme}><VscColorMode /></span>
 					<a className={style.icon} href='https://github.com/sunnywx' target='_blank' rel="noreferrer"><VscGithub /></a>
 				</div>
 			</nav>

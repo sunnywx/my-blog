@@ -6,7 +6,7 @@ snapshot:
   - /images/js-wasm-bench.png
 ---
 
-![](/images/js-wasm-bench.png)
+![](/assets/images/js-wasm-bench.png)
 
 ## Rust 环境准备
 
@@ -151,7 +151,7 @@ http-server .
 
 然后打开浏览器(比如我的 chrome)，进到测试页面, benchmark 对比：
 
-![](/images/js-wasm-fib.jpg)
+![](/assets/images/js-wasm-fib.jpg)
 
 ## 总结
 

@@ -1,0 +1,67 @@
+.wrap{
+  font-size: 1rem;
+
+  .pg {
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: inset 0 0 1px hsl(0deg 0% 39% / 50%);
+    cursor: pointer;
+    //transition: all 0.5s ease;
+    &:hover{
+      background: var(--hl);
+    }
+
+    @media (max-width: 768px) {
+      width: 95%;
+    }
+
+    > div:first-child {
+      font-size: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > span:first-child {
+        font-size: 1.2em;
+        font-weight: 600;
+        line-height: 1.2;
+        max-width: 75%;
+      }
+      >span:last-child {
+        color: gray;
+        font-size: 0.8em;
+      }
+    }
+
+    > p {
+      font-size: 1rem;
+      height: max-content;
+    }
+  }
+
+  .paginator {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    > button {
+      background: #5176ee;
+      border-radius: 6px;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+      &.active {
+        background: #89e885;
+      }
+    }
+  }
+}
+
+.page404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4ch;
+  color: rebeccapurple;
+}

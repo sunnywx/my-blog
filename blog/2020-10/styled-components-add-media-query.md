@@ -9,7 +9,7 @@ snapshot:
 Media query 在`styled-components`下的使用，和普通 css 下是一样的，只是 styled-components 支持 SCSS 的语法
 ，另外可以在 es6 的模板字符串(tagged template)下有独特的写法。
 
-![](/images/styled-comp-scss.jpeg)
+![](/assets/images/styled-comp-scss.jpeg)
 
 ## 传统的写法
 

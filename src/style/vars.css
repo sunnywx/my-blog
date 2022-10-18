@@ -1,9 +1,19 @@
 :root{
   /* css variables goes here */
   --font-size-base: 1rem;
-  --font-size-large: 1.25rem;
+  --font-size-x2: 1.25rem;
 
   /* layout */
   --header-height: 56px;
   --shrink-header-height: 112px;
+
+  /* theme */
+  --bg-light: #fff;
+  --color-light: #000;
+
+  --bg-dark: #222427;
+  --color-dark: #fff;
+
+  /* highlight */
+  --hl: rgb(192 164 243 / 50%);
 }

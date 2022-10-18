@@ -70,13 +70,16 @@
 			will-change: background-color;
 
 			&:hover,
-			&:active {
+			&:active, &.active {
 				border-bottom: 2px solid rgba(0,0,0,0.4);
 			}
 
-			&.active {
-				//background: rgba(0,0,0,0.4);
-				border-bottom: 2px solid rgba(0,0,0,0.4);
+			[data-theme="dark"] & {
+				color: var(--color-dark);
+				&:hover,
+				&:active, &.active {
+					border-bottom: 2px solid rgba(200, 200, 200 ,0.8);
+				}
 			}
 		}
 
@@ -96,6 +99,14 @@
 			&:hover{
 				color: black;
 				border: none;
+			}
+
+			[data-theme="dark"] & {
+				&:hover,
+				&:active, &.active {
+					//color: var(--color-dark);
+					border: none;
+				}
 			}
 		}
 	}

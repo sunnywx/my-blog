@@ -1,7 +1,12 @@
 import {h} from 'preact'
 import style from './style.scss'
+import {useEffect} from "preact/hooks";
 
 function About(props){
+  useEffect(()=> {
+    document.title = 'About | Thinking in X'
+  }, [])
+
   return (
     <div className={style.wrap}>
       <h2>About me:</h2>
