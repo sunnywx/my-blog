@@ -4,7 +4,7 @@ description: 使用运算符提升google搜索效率
 date: 2019-10-26 12:03
 tags:
   - google
-  - tooling
+  - tips
 ---
 
 ## allinanchor:

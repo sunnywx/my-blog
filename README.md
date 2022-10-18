@@ -14,13 +14,6 @@ yarn
 ## Develop
 
 ```shell
-# generate all blogs
-yarn gen:blog-urls
-
-# run mock server to serve previous seed data
-yarn mock:server
-
-## run preact-cli dev mode
 yarn dev
 ```
 
@@ -42,6 +35,11 @@ yarn dep:github
 ```shell
 yarn dep:vps
 ```
+
+## Troubleshooting
+
+1. `npx gh-pages -d build -b gh-page` fatal: A branch named 'gh-page' already exists.
+    解决方法: `rm -rf node_modules/.cache/gh-pages`
 
 ## License 
 MIT

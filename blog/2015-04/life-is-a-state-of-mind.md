@@ -3,7 +3,7 @@ title: life is a state of mind
 description: life is a state of mind, history is a shadow
 date: 2015-10-25 12:03
 tags:
-  - reading
+  - life
 ---
 
 > The subject of this article you are about to read reveals a crucial secret of your life.

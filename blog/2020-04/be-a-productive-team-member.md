@@ -2,6 +2,8 @@
 title: Be a productive team member
 description: 成为高效团队成员的几点建议
 date: 2020-04-08T11:11:46.370Z
+tags:
+  - jobs
 ---
 
 > 天赋可以让你赢得比赛，但是团队合作与智慧可以让你赢得总冠军 -- michael jordan

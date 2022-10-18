@@ -3,7 +3,10 @@ title: javascript vs webassembly fibonacci benchmark
 description: JS和WASM的斐波那契数计算的性能对比，很有趣...
 date: 2020-10-14 10:31
 snapshot:
-  - /images/js-wasm-bench.png
+  - /assets/images/js-wasm-bench.png
+tags:
+  - wasm
+  - rust
 ---
 
 ![](/assets/images/js-wasm-bench.png)

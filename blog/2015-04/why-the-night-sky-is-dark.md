@@ -3,10 +3,9 @@ title: why the night sky is dark
 description: 一本正经的瞎扯，常见的事物中也蕴含着深刻的道理...
 date: 2015-04-09 12:03
 snapshot:
-  - /images/galaxy.jpg
+  - /assets/images/galaxy.jpg
 tags:
   - life
-  - thinking
 ---
 
 ![](/assets/images/galaxy.jpg)

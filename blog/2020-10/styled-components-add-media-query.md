@@ -3,7 +3,9 @@ title: styled-components add media query
 description: 如何在styled-components下使用media query来做响应式设计
 date: 2020-10-14 09:36
 snapshot:
-  - /images/styled-comp-scss.jpeg
+  - /assets/images/styled-comp-scss.jpeg
+tags:
+  - css
 ---
 
 Media query 在`styled-components`下的使用，和普通 css 下是一样的，只是 styled-components 支持 SCSS 的语法

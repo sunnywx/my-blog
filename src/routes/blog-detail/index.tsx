@@ -100,16 +100,6 @@ function BlogDetail(props: Props) {
     }
   }
 
-  // function renderComment(){
-  //   return (
-  //     <Suspense fallback={<div>Loading gitalk..</div>}>
-  //       {typeof window !== "undefined" && (
-  //         <Gitalk options={gitalkOptions}/>
-  //       )}
-  //     </Suspense>
-  //   )
-  // }
-
   return (
     <div className={style.wrap}>
       <div className={style.article} dangerouslySetInnerHTML={{__html: parsed}} />

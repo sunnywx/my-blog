@@ -1,6 +1,8 @@
 ---
 title: react different render ways
 date: 2022-10-13
+tags:
+  - react
 ---
 
 ## render

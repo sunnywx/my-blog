@@ -1,5 +1,9 @@
 ---
 title: ways to run jsx in nodejs
+date: 2022-10-17
+tags:
+  - react
+  - node
 ---
 
 如何在nodejs repl下运行下面的代码：

@@ -3,7 +3,9 @@ title: docker hyperkit进程cpu占用超过100%
 description: com.docker.hyperkit cpu very high
 date: 2020-05-06 19:26
 snapshot:
-  - /images/docker-cpu.jpg
+  - /assets/images/docker-cpu.jpg
+tags:
+  - docker
 ---
 
 解决方法很简单： 在`docker desktop` 设置里，把 cpu 调成 1 核。

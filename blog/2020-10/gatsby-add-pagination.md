@@ -2,6 +2,9 @@
 title: gatsby page add pagination
 description: 如何在 gatsby 和 graphql下给列表加分页
 date: 2020-10-13 14:20:48
+tags:
+  - gatsby
+  - graphql
 ---
 
 ## gatsby 下分页的难点
