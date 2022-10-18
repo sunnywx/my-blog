@@ -2,7 +2,7 @@
   {
     "url": "/blog/2022-10/ways-to-run-jsx-in-node",
     "title": "ways to run jsx in nodejs",
-    "date": "2022-10-18",
+    "date": "2022-10-19",
     "desc": "如何在nodejs repl下运行下面的代码：\n// ssr.js\n\n/** @jsx h */\nimport {render} from &#39;preact-render-to-string&#39;\nimport {h} from &#39;preact&#39;\n\nconst App=&l..."
   },
   {
