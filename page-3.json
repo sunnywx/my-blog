@@ -1,5 +1,11 @@
 [
   {
+    "url": "/blog/2020-04/note-about-npmrc",
+    "title": "npmrc常用配置",
+    "date": "2020-04-07",
+    "desc": "在平时的 web 开发中，常用的一些 npmrc 配置\n在项目根目录创建 .npmrc文件，加上如下内容\n// 切换到国内的npm源\nregistry=https://registry.npm.taobao.org\n\n// 如果平时喜欢yarn，不想生成npm的package-lock\npackag..."
+  },
+  {
     "url": "/blog/2020-04/mac-catalina-install-libvips",
     "title": "Mac 10.15 安装 libvips",
     "date": "2020-04-06",
@@ -22,11 +28,5 @@
     "title": "life is a state of mind",
     "date": "2015-10-25",
     "desc": "\nThe subject of this article you are about to read reveals a crucial secret of your life.\nIt concerns a subject that is liable to make fundamental cha..."
-  },
-  {
-    "url": "/blog/2015-04/why-the-night-sky-is-dark",
-    "title": "why the night sky is dark",
-    "date": "2015-04-09",
-    "desc": "\n\n夜空总给我一种神秘的感觉，似乎要告诉我什么，像一位睿智的老者、默默的友人……\n当你仰望它时内心有莫名的平静……\n宇宙中的问题没有简单与复杂的区分，简单与复杂这些形容词，都掺杂了人的主观情感……\n\n这个生活中司空见惯的现象却蕴涵着深刻的道理(关于奥伯斯佯谬)。不动脑子的解释就是：夜晚地球的一面背对..."
   }
 ]

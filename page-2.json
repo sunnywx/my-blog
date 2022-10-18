@@ -1,5 +1,11 @@
 [
   {
+    "url": "/blog/2020-10/styled-components-add-media-query",
+    "title": "styled-components add media query",
+    "date": "2020-10-14",
+    "desc": "Media query 在styled-components下的使用，和普通 css 下是一样的，只是 styled-components 支持 SCSS 的语法\n，另外可以在 es6 的模板字符串(tagged template)下有独特的写法。\n\n传统的写法\n#wrapper {\n  displ..."
+  },
+  {
     "url": "/blog/2020-10/gatsby-add-pagination",
     "title": "gatsby page add pagination",
     "date": "2020-10-13",
@@ -22,11 +28,5 @@
     "title": "django webpack hot reload",
     "date": "2020-04-07",
     "desc": "1. 设置后端环境\n# init python virtrual env\npip install virtualenv\nvirtualenv venv\nsource ./venv/bin/activate\n\npip install django-webpack-loader\n\n2. 设置 djang..."
-  },
-  {
-    "url": "/blog/2020-04/note-about-npmrc",
-    "title": "npmrc常用配置",
-    "date": "2020-04-07",
-    "desc": "在平时的 web 开发中，常用的一些 npmrc 配置\n在项目根目录创建 .npmrc文件，加上如下内容\n// 切换到国内的npm源\nregistry=https://registry.npm.taobao.org\n\n// 如果平时喜欢yarn，不想生成npm的package-lock\npackag..."
   }
 ]

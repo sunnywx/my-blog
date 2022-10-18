@@ -66,6 +66,10 @@
   "2022": {
     "10": [
       {
+        "title": "优化打包gitalk",
+        "url": "/blog/2022-10/reduce-gitalk-bundle"
+      },
+      {
         "title": "ways to run jsx in nodejs",
         "url": "/blog/2022-10/ways-to-run-jsx-in-node"
       },

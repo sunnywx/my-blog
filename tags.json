@@ -1,45 +1,94 @@
 {
-  "_": [
+  "_": [],
+  "webpack": [
+    {
+      "u": "/blog/2022-10/reduce-gitalk-bundle",
+      "t": "优化打包gitalk"
+    },
+    {
+      "u": "/blog/2020-04/django-webpack-hot-reload",
+      "t": "django webpack hot reload"
+    }
+  ],
+  "refine": [
+    {
+      "u": "/blog/2022-10/reduce-gitalk-bundle",
+      "t": "优化打包gitalk"
+    }
+  ],
+  "react": [
     {
       "u": "/blog/2022-10/ways-to-run-jsx-in-node",
       "t": "ways to run jsx in nodejs"
     },
     {
-      "u": "/blog/2022-10/free-site-host",
-      "t": "free site host"
-    },
-    {
       "u": "/blog/2022-10/react-different-render-ways",
       "t": "react different render ways"
-    },
+    }
+  ],
+  "node": [
     {
-      "u": "/blog/2020-10/js-wasm-fibonacci-compare",
-      "t": "javascript vs webassembly fibonacci benchmark"
-    },
-    {
-      "u": "/blog/2020-10/styled-components-add-media-query",
-      "t": "styled-components add media query"
-    },
-    {
-      "u": "/blog/2020-10/gatsby-add-pagination",
-      "t": "gatsby page add pagination"
-    },
-    {
-      "u": "/blog/2020-05/docker-hyperkit-cpu-very-high",
-      "t": "docker hyperkit进程cpu占用超过100%"
-    },
-    {
-      "u": "/blog/2020-04/be-a-productive-team-member",
-      "t": "Be a productive team member"
-    },
-    {
-      "u": "/blog/2020-04/django-webpack-hot-reload",
-      "t": "django webpack hot reload"
+      "u": "/blog/2022-10/ways-to-run-jsx-in-node",
+      "t": "ways to run jsx in nodejs"
     },
     {
       "u": "/blog/2020-04/note-about-npmrc",
       "t": "npmrc常用配置"
+    }
+  ],
+  "misc": [
+    {
+      "u": "/blog/2022-10/free-site-host",
+      "t": "free site host"
     },
+    {
+      "u": "/blog/2019-10/from-jekyll-to-gatsby",
+      "t": "From jekyll to gatsby"
+    }
+  ],
+  "wasm": [
+    {
+      "u": "/blog/2020-10/js-wasm-fibonacci-compare",
+      "t": "javascript vs webassembly fibonacci benchmark"
+    }
+  ],
+  "rust": [
+    {
+      "u": "/blog/2020-10/js-wasm-fibonacci-compare",
+      "t": "javascript vs webassembly fibonacci benchmark"
+    }
+  ],
+  "css": [
+    {
+      "u": "/blog/2020-10/styled-components-add-media-query",
+      "t": "styled-components add media query"
+    }
+  ],
+  "gatsby": [
+    {
+      "u": "/blog/2020-10/gatsby-add-pagination",
+      "t": "gatsby page add pagination"
+    }
+  ],
+  "graphql": [
+    {
+      "u": "/blog/2020-10/gatsby-add-pagination",
+      "t": "gatsby page add pagination"
+    }
+  ],
+  "docker": [
+    {
+      "u": "/blog/2020-05/docker-hyperkit-cpu-very-high",
+      "t": "docker hyperkit进程cpu占用超过100%"
+    }
+  ],
+  "jobs": [
+    {
+      "u": "/blog/2020-04/be-a-productive-team-member",
+      "t": "Be a productive team member"
+    }
+  ],
+  "mac": [
     {
       "u": "/blog/2020-04/mac-catalina-install-libvips",
       "t": "Mac 10.15 安装 libvips"
@@ -51,31 +100,17 @@
       "t": "google search operator"
     }
   ],
-  "tooling": [
+  "tips": [
     {
       "u": "/blog/2019-10/google-advanced-operators",
       "t": "google search operator"
     }
   ],
-  "misc": [
-    {
-      "u": "/blog/2019-10/from-jekyll-to-gatsby",
-      "t": "From jekyll to gatsby"
-    }
-  ],
-  "reading": [
+  "life": [
     {
       "u": "/blog/2015-04/life-is-a-state-of-mind",
       "t": "life is a state of mind"
-    }
-  ],
-  "life": [
-    {
-      "u": "/blog/2015-04/why-the-night-sky-is-dark",
-      "t": "why the night sky is dark"
-    }
-  ],
-  "thinking": [
+    },
     {
       "u": "/blog/2015-04/why-the-night-sky-is-dark",
       "t": "why the night sky is dark"
