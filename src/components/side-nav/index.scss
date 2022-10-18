@@ -56,7 +56,7 @@ $bg-color: #fff;
           line-height: 1.2;
           padding: 5px 0;
           &.active, &:hover {
-            background: #dde194;
+            background: var(--hl);
           }
 
           > a {
@@ -66,6 +66,13 @@ $bg-color: #fff;
             width: 100%;
             &:hover {
               color: #333;
+            }
+
+            [data-theme="dark"] & {
+              color: var(--color-dark);
+              &:hover {
+                color: wheat;
+              }
             }
           }
         }

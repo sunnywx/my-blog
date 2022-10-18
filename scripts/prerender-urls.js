@@ -34,8 +34,6 @@ function getBlogFiles(prefix = 'blog', res) {
       }
       res.push({
         url: `/${  childPrefix.replace('.md', '')}`,
-        // title: cont.match(/\ntitle:(.+)\n?/)?.[1]?.trim() || '',
-        // date: cont.match(/\ndate:(.+)\n?/)?.[1]?.trim() || currentDay(),
         title: meta.title || '',
         date: dayjs(meta.date || dayjs()).format('YYYY-MM-DD'),
         tags: meta.tags || [],

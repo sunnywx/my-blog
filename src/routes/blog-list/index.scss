@@ -54,6 +54,9 @@
       &.active {
         background: #89e885;
       }
+      &:hover {
+        background: darken(#5176ee, 10%);
+      }
     }
   }
 }

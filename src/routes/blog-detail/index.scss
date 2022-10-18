@@ -9,12 +9,17 @@
   > .pager {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1rem;
+    margin-top: 32px;
+
     >a {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      padding: 4px 8px;
+      outline: 1px solid #b2ccd5;
+      border-radius: 8px;
 
       > svg {
         font-size: 1.2rem;

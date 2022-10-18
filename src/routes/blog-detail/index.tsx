@@ -3,7 +3,8 @@ import {useEffect, useContext} from 'preact/hooks'
 import {usePrerenderData} from '@preact/prerender-data-provider'
 import {marked} from 'marked'
 import {AppCtx} from "../../store/app-state";
-// import html from 'htm'
+import "gitalk/dist/gitalk.css"
+import Gitalk from "gitalk/dist/gitalk-component"
 
 import style from './index.scss'
 import {VscArrowLeft, VscArrowRight} from "react-icons/vsc";
@@ -71,6 +72,21 @@ function BlogDetail(props: Props) {
           <a href={next.u}>{next.t} <VscArrowRight /></a>
         )}
       </div>
+
+      {typeof window !== "undefined" && (
+        <Gitalk
+          options={{
+            clientID: "e6529ed76f49a1c63227",
+            clientSecret: "105ae6c9c257d966e42020b5babd8d11b4b35fb6",
+            repo: "sunnywx.github.io",
+            owner: "sunnywx",
+            admin: ["sunnywx"],
+            id: props.slug,
+            title: ids[blogIdx]?.t,
+            distractionFreeMode: false,
+          }}
+        />
+      )}
     </div>
   );
 }

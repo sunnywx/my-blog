@@ -13,15 +13,27 @@ import About from '../routes/about'
 import BlogList from "../routes/blog-list";
 import BlogDetail from "../routes/blog-detail";
 import Tags from '../routes/tags'
+import Projects from "../routes/projects";
 
 const appState=createAppState()
+
+function checkSmallScreen() {
+  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    if (!appState.sideMenu.value) {
+      appState.sideMenu.value = true;
+    }
+  }
+}
+
+checkSmallScreen()
 
 const App = (props: unknown) => {
   useEffect(()=> {
     Prism.highlightAll();
 
     // auto set dark mode
-    if((new Date).getHours() > 18){
+    const hour=(new Date).getHours()
+    if((hour >= 18 && hour < 24) || (hour >= 0 && hour <=6)){
       document.documentElement.setAttribute('data-theme', 'dark')
     }
 
@@ -33,15 +45,9 @@ const App = (props: unknown) => {
       })
   }, [])
 
-  function handleRouteChange(ev){
+  function handleRouteChange(){
     // console.log('changed route: ', ev)
-    if(typeof window !== 'undefined'){
-      if(window.innerWidth > 768) return;
-
-      if(!appState.sideMenu.value){
-        appState.sideMenu.value=true;
-      }
-    }
+    checkSmallScreen()
   }
 
   return (
@@ -57,6 +63,7 @@ const App = (props: unknown) => {
               <Route path="/" component={BlogList} />
               <Route path="/about" component={About} />
               <Route path="/tags" component={Tags} />
+              <Route path="/projects" component={Projects} />
               <Route path="/blogs/:pn?" component={BlogList} />
               <Route path="/blog/:date/:slug?" component={BlogDetail} />
             </Router>

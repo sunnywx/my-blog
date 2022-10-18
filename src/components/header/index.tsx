@@ -37,11 +37,12 @@ function Header(){
 				<div>
 					<Link activeClassName={style.active} href="/blogs">Blogs</Link>
 					<Link activeClassName={style.active} href="/tags">Tags</Link>
+					<Link activeClassName={style.active} href="/projects">Projects</Link>
 					<Link activeClassName={style.active} href="/about">About</Link>
 				</div>
 				<div>
 					<span className={style.icon} onClick={toggleTheme}><VscColorMode /></span>
-					<a className={style.icon} href='https://github.com/sunnywx' target='_blank' rel="noreferrer"><VscGithub /></a>
+					<a className={style.icon} href='https://github.com/sunnywx' target='_blank' rel="noreferrer noopener"><VscGithub /></a>
 				</div>
 			</nav>
 		</header>
