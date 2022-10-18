@@ -1,18 +1,27 @@
 import {h} from 'preact'
-import {useEffect, useContext} from 'preact/hooks'
+import {useEffect, useContext, useMemo} from 'preact/hooks'
+// import {Suspense, lazy} from 'preact/compat'
 import {usePrerenderData} from '@preact/prerender-data-provider'
 import {marked} from 'marked'
+import {Helmet} from 'react-helmet'
 import {AppCtx} from "../../store/app-state";
-import "gitalk/dist/gitalk.css"
-import Gitalk from "gitalk/dist/gitalk-component"
 
 import style from './index.scss'
 import {VscArrowLeft, VscArrowRight} from "react-icons/vsc";
+
+// import "gitalk/dist/gitalk.css"
+// const Gitalk=lazy(()=> import("gitalk/dist/gitalk-component"))
 
 type Props = {
   className?: string;
   date: string;
   slug?: string;
+}
+
+declare global {
+  interface Window {
+    Gitalk: any
+  }
 }
 
 function normalizeUrl(url: string){
@@ -41,6 +50,36 @@ function BlogDetail(props: Props) {
   //   console.log('page ids: ', pageIds.value)
   // }, [data, pageIds.value])
 
+  useEffect(()=> {
+    let rendered=false
+    const gitalkOptions = {
+      clientID: "e6529ed76f49a1c63227",
+      clientSecret: "105ae6c9c257d966e42020b5babd8d11b4b35fb6",
+      repo: "sunnywx.github.io",
+      owner: "sunnywx",
+      admin: ["sunnywx"],
+      id: props.slug,
+      title: ids[blogIdx]?.t,
+      distractionFreeMode: false,
+    }
+
+    let tm: any =setInterval(()=> {
+      if(window.Gitalk){
+        // rendered=true
+        const gitalk = new window.Gitalk(gitalkOptions)
+        gitalk.render('gitalk-container')
+
+        clearInterval(tm)
+        tm=null
+      }
+    }, 100)
+
+    return ()=> {
+      clearInterval(tm)
+      tm=null
+    }
+  }, [blogUrl])
+
   if (loading) return <p>Loading...</p>;
 
   if (error) return <p>Error: {error.message}</p>;
@@ -61,6 +100,16 @@ function BlogDetail(props: Props) {
     }
   }
 
+  // function renderComment(){
+  //   return (
+  //     <Suspense fallback={<div>Loading gitalk..</div>}>
+  //       {typeof window !== "undefined" && (
+  //         <Gitalk options={gitalkOptions}/>
+  //       )}
+  //     </Suspense>
+  //   )
+  // }
+
   return (
     <div className={style.wrap}>
       <div className={style.article} dangerouslySetInnerHTML={{__html: parsed}} />
@@ -73,20 +122,12 @@ function BlogDetail(props: Props) {
         )}
       </div>
 
-      {typeof window !== "undefined" && (
-        <Gitalk
-          options={{
-            clientID: "e6529ed76f49a1c63227",
-            clientSecret: "105ae6c9c257d966e42020b5babd8d11b4b35fb6",
-            repo: "sunnywx.github.io",
-            owner: "sunnywx",
-            admin: ["sunnywx"],
-            id: props.slug,
-            title: ids[blogIdx]?.t,
-            distractionFreeMode: false,
-          }}
-        />
-      )}
+      <div id='gitalk-container' />
+
+      <Helmet>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js" />
+      </Helmet>
     </div>
   );
 }
