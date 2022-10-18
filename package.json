@@ -4,15 +4,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build",
     "gen:blog-urls": "node prerender-urls.js",
-    "build:prod": "rimraf build && preact build --no-sw --prerenderUrls prerender-urls.js && cp -r public/*.json build",
+    "build": "rimraf build && preact build --no-sw --prerenderUrls prerender-urls.js && cp -r public/*.json build",
     "mock:server": "node mock-server.js",
     "serve": "sirv build --cors --single --host 0.0.0.0 --port 9090",
     "dev": "preact watch --no-sw",
     "lint": "eslint src",
     "test": "jest",
-    "dep:github": "npx gh-pages -d build -b master",
+    "dep:github": "npx gh-pages -d build -b gh-page",
     "dep:vps": "rsync -avz --delete build/ bwg:/var/www/html"
   },
   "dependencies": {

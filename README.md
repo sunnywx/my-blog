@@ -1,19 +1,47 @@
 # wx-blog
 
-## CLI Commands
-*   `npm install`: Installs dependencies
-
-*   `npm run dev`: Run a development, HMR server
-
-*   `npm run serve`: Run a production-like server
-
-*   `npm run build`: Production-ready build
-
-*   `npm run lint`: Pass TypeScript files using ESLint
-
-*   `npm run test`: Run Jest and Enzyme with
-    [`enzyme-adapter-preact-pure`](https://github.com/preactjs/enzyme-adapter-preact-pure) for
-    your tests
+> My awesome blog built with preact
 
 
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+## Setup
+
+```shell
+git clone --depth 1https://github.com/sunnywx/sunnywx.github.io.git my-blog
+cd my-blog
+yarn
+```
+
+## Develop
+
+```shell
+# generate all blogs
+yarn gen:blog-urls
+
+# run mock server to serve previous seed data
+yarn mock:server
+
+## run preact-cli dev mode
+yarn dev
+```
+
+## Production
+
+```shell
+yarn build
+yarn serve
+```
+
+## Deploy to github page
+
+```shell
+yarn dep:github
+```
+
+## Deploy to own vps
+
+```shell
+yarn dep:vps
+```
+
+## License 
+MIT
