@@ -1,0 +1,32 @@
+[
+  {
+    "url": "/blog/2020-10/gatsby-add-pagination",
+    "title": "gatsby page add pagination",
+    "date": "2020-10-13",
+    "desc": "gatsby 下分页的难点\ngatsby 生成的都是静态网页，数据是通过 graphql 聚合的，这里查询数据不像传统的关系型数据库那样\n直接通过limit, offset来控制分页数据。gatsby 的数据源可能是每个 markdown 经过 nodejs 转换后的纯 json，\n再通过 grap..."
+  },
+  {
+    "url": "/blog/2020-05/docker-hyperkit-cpu-very-high",
+    "title": "docker hyperkit进程cpu占用超过100%",
+    "date": "2020-05-06",
+    "desc": "解决方法很简单： 在docker desktop 设置里，把 cpu 调成 1 核。\n这样 com.docker.hyperkit 后续 cpu 占用不会超过 100%\n\n"
+  },
+  {
+    "url": "/blog/2020-04/be-a-productive-team-member",
+    "title": "Be a productive team member",
+    "date": "2020-04-08",
+    "desc": "\n天赋可以让你赢得比赛，但是团队合作与智慧可以让你赢得总冠军 -- michael jordan\n\n了解实情\n出色的团队合作者了解团队需要做什么以及为什么要这么做。他们知道自己的技能和品性对集体的努力有何助益。 简单地听命于人会让人迅速产生愤恨情绪并与团队格格不入。将自己当作团队一员时，您知道自己的..."
+  },
+  {
+    "url": "/blog/2020-04/django-webpack-hot-reload",
+    "title": "django webpack hot reload",
+    "date": "2020-04-07",
+    "desc": "1. 设置后端环境\n# init python virtrual env\npip install virtualenv\nvirtualenv venv\nsource ./venv/bin/activate\n\npip install django-webpack-loader\n\n2. 设置 djang..."
+  },
+  {
+    "url": "/blog/2020-04/note-about-npmrc",
+    "title": "npmrc常用配置",
+    "date": "2020-04-07",
+    "desc": "在平时的 web 开发中，常用的一些 npmrc 配置\n在项目根目录创建 .npmrc文件，加上如下内容\n// 切换到国内的npm源\nregistry=https://registry.npm.taobao.org\n\n// 如果平时喜欢yarn，不想生成npm的package-lock\npackag..."
+  }
+]

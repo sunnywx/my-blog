@@ -1,0 +1,32 @@
+[
+  {
+    "url": "/blog/2020-04/mac-catalina-install-libvips",
+    "title": "Mac 10.15 安装 libvips",
+    "date": "2020-04-06",
+    "desc": "gatsby 的图片处理库sharp很方便，但是 sharp 依赖 c++编写的 libvips。\n当 Mac 升级到 catalina(10.15), brew安装时一直失败，当尝试源码编译，会出现tiff依赖的错误。\n还有zlib在 catalina 默认的 pkg-config的配置zlib...."
+  },
+  {
+    "url": "/blog/2019-10/google-advanced-operators",
+    "title": "google search operator",
+    "date": "2019-10-26",
+    "desc": "allinanchor:\nIf you start your query with allinanchor:, Google restricts results to pages containing all query terms you specify in the anchor text on..."
+  },
+  {
+    "url": "/blog/2019-10/from-jekyll-to-gatsby",
+    "title": "From jekyll to gatsby",
+    "date": "2019-08-31",
+    "desc": "While hosting personal site on github pages, jekyll is fine.\nBut nowadays static site generator like GatsbyJs is more popular which\nis based on the fa..."
+  },
+  {
+    "url": "/blog/2015-04/life-is-a-state-of-mind",
+    "title": "life is a state of mind",
+    "date": "2015-10-25",
+    "desc": "\nThe subject of this article you are about to read reveals a crucial secret of your life.\nIt concerns a subject that is liable to make fundamental cha..."
+  },
+  {
+    "url": "/blog/2015-04/why-the-night-sky-is-dark",
+    "title": "why the night sky is dark",
+    "date": "2015-04-09",
+    "desc": "\n\n夜空总给我一种神秘的感觉，似乎要告诉我什么，像一位睿智的老者、默默的友人……\n当你仰望它时内心有莫名的平静……\n宇宙中的问题没有简单与复杂的区分，简单与复杂这些形容词，都掺杂了人的主观情感……\n\n这个生活中司空见惯的现象却蕴涵着深刻的道理(关于奥伯斯佯谬)。不动脑子的解释就是：夜晚地球的一面背对..."
+  }
+]
