@@ -21,7 +21,7 @@ function BlogList({pn}: Props) {
   const total=Math.ceil(pageIds.value.length / pageSize)
 
   useEffect(()=> {
-    document.title = 'Blogs | Thinking in X'
+    document.title = 'Blogs | sunnywang'
   }, [])
 
   useEffect(() => {

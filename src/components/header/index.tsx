@@ -9,8 +9,8 @@ import {VscMenu, VscGithub, VscColorMode} from "react-icons/vsc";
 import style from './style.scss';
 
 function Header(){
-	const {sideMenu}=useContext(AppCtx)
-	// const dispose=effect(()=> {console.log('menu toggled: ', sideMenu.value)})
+	const {hideSider}=useContext(AppCtx)
+	// const dispose=effect(()=> {console.log('menu toggled: ', hideSider.value)})
 
 	function toggleTheme(){
 		if(typeof window === 'undefined') return;
@@ -27,10 +27,10 @@ function Header(){
 	return (
 		<header class={style.header}>
 			<div>
-				<span onClick={()=> sideMenu.value = !sideMenu.value} id='toggle-side-nav'>
+				<span onClick={()=> hideSider.value = !hideSider.value} id='toggle-side-nav'>
 					<VscMenu />
 				</span>
-				<h1 onClick={()=> route('/')}>Thinking in X</h1>
+				<h1 onClick={()=> route('/')}>sunnywang</h1>
 			</div>
 
 			<nav>

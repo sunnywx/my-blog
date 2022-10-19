@@ -1,8 +1,9 @@
 import { h, Fragment } from 'preact';
 import { Route, Router } from 'preact-router';
-import {useEffect} from 'preact/hooks'
+import {useEffect, useErrorBoundary} from 'preact/hooks'
 import Prism from 'prismjs'
 import {Provider as PreloadDataProvider} from '@preact/prerender-data-provider'
+import {Helmet} from 'react-helmet'
 import {AppCtx, createAppState} from '../store/app-state'
 
 import Header from './header';
@@ -17,18 +18,11 @@ import Projects from "../routes/projects";
 
 const appState=createAppState()
 
-function checkSmallScreen() {
-  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-    if (!appState.sideMenu.value) {
-      appState.sideMenu.value = true;
-    }
-  }
-}
-
-checkSmallScreen()
-
 const App = (props: unknown) => {
+  const [error, resetError]=useErrorBoundary()
+
   useEffect(()=> {
+
     Prism.highlightAll();
 
     // auto set dark mode
@@ -47,7 +41,22 @@ const App = (props: unknown) => {
 
   function handleRouteChange(){
     // console.log('changed route: ', ev)
-    checkSmallScreen()
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      if (!appState.hideSider.value) {
+        appState.hideSider.value = true;
+      }
+    }
+  }
+
+  if(error){
+    return (
+      <div className='error-bound'>
+        <h2>Error:</h2>
+        <p>{error.message}</p>
+        <p>{error.stack}</p>
+        <button onClick={resetError}>Try again</button>
+      </div>
+    );
   }
 
   return (
@@ -62,12 +71,17 @@ const App = (props: unknown) => {
             <Router onChange={handleRouteChange}>
               <Route path="/" component={BlogList} />
               <Route path="/about" component={About} />
-              <Route path="/tags" component={Tags} />
+              <Route path="/tags/:name?" component={Tags} />
               <Route path="/projects" component={Projects} />
               <Route path="/blogs/:pn?" component={BlogList} />
               <Route path="/blog/:date/:slug?" component={BlogDetail} />
             </Router>
           </div>
+
+          <Helmet>
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+            <script src="https://unpkg.com/gitalk/dist/gitalk.min.js" />
+          </Helmet>
         </>
       </PreloadDataProvider>
     </AppCtx.Provider>

@@ -4,7 +4,7 @@ $bg-color: #fff;
 .nav {
   transition: all 0.5s ease;
   width: $wid;
-  background: darken($bg-color, 10%);
+  //background: darken($bg-color, 10%);
   padding: 10px;
   overflow: auto;
   z-index: 20;

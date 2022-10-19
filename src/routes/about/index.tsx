@@ -4,7 +4,7 @@ import {useEffect} from "preact/hooks";
 
 function About(props){
   useEffect(()=> {
-    document.title = 'About | Thinking in X'
+    document.title = 'About | sunnywang'
   }, [])
 
   return (

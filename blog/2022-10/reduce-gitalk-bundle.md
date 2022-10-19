@@ -1,9 +1,8 @@
 ---
-title: 优化打包gitalk
+title: gitalk打包优化
 date: 2022-10-19
 tags:
   - webpack
-  - refine
 ---
 
 ## lazy load
@@ -37,17 +36,20 @@ const Gitalk=lazy(()=> import("gitalk/dist/gitalk-component"))
 由于不确定gitalk对应的js脚本何时会将构造函数挂载到window对象，需要用timer来监听
 
 ```tsx
+let rendered = false
+
 useEffect(() => {
   const gitalkOptions = {...}
 
   let tm: number = setInterval(() => {
-    if (window.Gitalk) {
+    if (window.Gitalk && !rendered) {
+      rendered = true
       const gitalk = new window.Gitalk(gitalkOptions)
       gitalk.render('gitalk-container')
 
       clearInterval(tm)
     }
-  }, 100)
+  }, 200)
 
   return () => {
     clearInterval(tm)

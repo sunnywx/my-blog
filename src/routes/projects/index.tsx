@@ -10,7 +10,7 @@ type Props = {
 function Tags(props: Props) {
 
   useEffect(()=> {
-    document.title = 'Projects | Thinking in X'
+    document.title = 'Projects | sunnywang'
   }, [])
 
   return (

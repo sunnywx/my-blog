@@ -2,6 +2,57 @@
   position: relative;
   padding: 1rem;
 
+  .header {
+    margin-bottom: 32px;
+    > h1{
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > div {
+        display: inline-flex;
+        align-items: center;
+        //flex: 1;
+        flex-wrap: wrap;
+        flex-basis: 80%;
+        flex-grow: 0;
+        > span:first-child {
+          margin-right: 8px;
+
+          & ~ a {
+            display: inline-flex;
+            padding: 3px 6px;
+            background: #ddd;
+            border-radius: 8px;
+            margin-right: 8px;
+
+            [data-theme="dark"] & {
+              color: #666;
+              &:hover{
+                color: #333;
+              }
+            }
+          }
+        }
+      }
+      > span{
+        display: inline-flex;
+        align-items: center;
+        min-width: max-content;
+        color: gray;
+        svg {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
   > .article {
 
   }

@@ -25,7 +25,7 @@ function compare(a, b){
 
 function SideNav(props: Props) {
   const [chapters, setChapters]=useState({})
-  const {sideMenu}=useContext(AppCtx)
+  const {hideSider}=useContext(AppCtx)
   const navRef=useRef(null)
   let toggleRef: any=null
 
@@ -51,7 +51,7 @@ function SideNav(props: Props) {
   function handleResize(){
     const sz=window.innerWidth
     if(sz < threshold){
-      sideMenu.value=true // auto hide side menu
+      hideSider.value=true // auto hide side menu
     }
   }
 
@@ -61,13 +61,13 @@ function SideNav(props: Props) {
     if(toggleRef && toggleRef.contains(ev.target)) return;
     // @ts-ignore
     if(navRef && !navRef?.current?.contains(ev.target)){
-      sideMenu.value=true
+      hideSider.value=true
     }
   }
 
   return (
-    <div className={cs(style.nav, {[style.hidden]: sideMenu.value})} ref={navRef}>
-      {/* use sideMenu will not trigger re-render */}
+    <div className={cs(style.nav, {[style.hidden]: hideSider.value})} ref={navRef}>
+      {/* use hideSider will not trigger re-render */}
       {Object.keys(chapters).sort(compare).map(year=> {
         return (
           <div key={year} className={style.year}>

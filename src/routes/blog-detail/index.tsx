@@ -1,16 +1,13 @@
 import {h} from 'preact'
-import {useEffect, useContext, useMemo} from 'preact/hooks'
-// import {Suspense, lazy} from 'preact/compat'
+import {useEffect, useContext} from 'preact/hooks'
 import {usePrerenderData} from '@preact/prerender-data-provider'
 import {marked} from 'marked'
-import {Helmet} from 'react-helmet'
+import day from 'dayjs'
 import {AppCtx} from "../../store/app-state";
+import Comment from "./comment";
 
 import style from './index.scss'
-import {VscArrowLeft, VscArrowRight} from "react-icons/vsc";
-
-// import "gitalk/dist/gitalk.css"
-// const Gitalk=lazy(()=> import("gitalk/dist/gitalk-component"))
+import {VscArrowLeft, VscArrowRight, VscInfo, VscTag} from "react-icons/vsc";
 
 type Props = {
   className?: string;
@@ -37,48 +34,13 @@ function BlogDetail(props: Props) {
   const ids=pageIds.value
   const blogUrl=normalizeUrl(['/blog', props.date, props.slug].join('/'))
   const blogIdx=ids.findIndex(v=> v.u === blogUrl)
+  const title=ids[blogIdx]?.t
 
   useEffect(()=> {
-    const title=ids[blogIdx]?.t
     if(title){
-      document.title = `${title} | Thinking in X`
+      document.title = `${title} | sunnywang`
     }
   }, [blogIdx, ids, props.slug])
-
-  // useEffect(()=> {
-  //   // console.log('preload data: ', data)
-  //   console.log('page ids: ', pageIds.value)
-  // }, [data, pageIds.value])
-
-  useEffect(()=> {
-    let rendered=false
-    const gitalkOptions = {
-      clientID: "e6529ed76f49a1c63227",
-      clientSecret: "105ae6c9c257d966e42020b5babd8d11b4b35fb6",
-      repo: "sunnywx.github.io",
-      owner: "sunnywx",
-      admin: ["sunnywx"],
-      id: props.slug,
-      title: ids[blogIdx]?.t,
-      distractionFreeMode: false,
-    }
-
-    let tm: any =setInterval(()=> {
-      if(window.Gitalk){
-        // rendered=true
-        const gitalk = new window.Gitalk(gitalkOptions)
-        gitalk.render('gitalk-container')
-
-        clearInterval(tm)
-        tm=null
-      }
-    }, 100)
-
-    return ()=> {
-      clearInterval(tm)
-      tm=null
-    }
-  }, [blogUrl])
 
   if (loading) return <p>Loading...</p>;
 
@@ -102,6 +64,20 @@ function BlogDetail(props: Props) {
 
   return (
     <div className={style.wrap}>
+      <div className={style.header}>
+        <h1>{title}</h1>
+        <div>
+          <div>
+            <span><VscTag /></span>
+            {(data.tags || []).map(t=> {
+              return (
+                <a key={t} href={`/tags/${t}`}>{t}</a>
+              )
+            })}
+          </div>
+          <span><VscInfo /> {day(data.date).format('YYYY-MM-DD')}</span>
+        </div>
+      </div>
       <div className={style.article} dangerouslySetInnerHTML={{__html: parsed}} />
       <div className={style.pager}>
         {prev && (
@@ -111,13 +87,7 @@ function BlogDetail(props: Props) {
           <a href={next.u}>{next.t} <VscArrowRight /></a>
         )}
       </div>
-
-      <div id='gitalk-container' />
-
-      <Helmet>
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js" />
-      </Helmet>
+      <Comment id={blogUrl} title={title} />
     </div>
   );
 }
