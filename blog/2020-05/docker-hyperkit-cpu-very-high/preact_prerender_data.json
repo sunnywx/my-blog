@@ -1,1 +1,0 @@
-{"url":"/blog/2020-05/docker-hyperkit-cpu-very-high","date":"2020-05-06","tags":["docker"],"content":"\n解决方法很简单： 在`docker desktop` 设置里，把 cpu 调成 1 核。\n\n这样 `com.docker.hyperkit` 后续 cpu 占用不会超过 100%\n\n![](/assets/images/docker-cpu.jpg)\n"}

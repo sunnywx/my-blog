@@ -1,7 +1,7 @@
 [
   {
     "url": "/blog/2022-10/reduce-gitalk-bundle",
-    "title": "优化打包gitalk",
+    "title": "gitalk打包优化",
     "date": "2022-10-19",
     "desc": "lazy load\n评论插件gitalk的react组件体积比较大 (~700K), 直接静态import会导致某个chunk的体积很大。\n尝试使用lazy, Suspense来主动分包。\nimport &quot;gitalk/dist/gitalk.css&quot;\nconst Gitalk=..."
   },
@@ -12,16 +12,16 @@
     "desc": "如何在nodejs repl下运行下面的代码：\n// ssr.js\n\n/** @jsx h */\nimport {render} from &#39;preact-render-to-string&#39;\nimport {h} from &#39;preact&#39;\n\nconst App=&l..."
   },
   {
-    "url": "/blog/2022-10/free-site-host",
-    "title": "free site host",
-    "date": "2022-10-13",
-    "desc": "github page\nnetlify\nvercel page\ncloudflare page\nsurge.sh\n"
-  },
-  {
     "url": "/blog/2022-10/react-different-render-ways",
     "title": "react different render ways",
     "date": "2022-10-13",
     "desc": "render\nhydrate\npre-render\nssr\nssg (static export)\n"
+  },
+  {
+    "url": "/blog/2021-03/feynman-learning-method",
+    "title": "feynman learning method",
+    "date": "2021-03-20",
+    "desc": "\n"
   },
   {
     "url": "/blog/2020-10/js-wasm-fibonacci-compare",

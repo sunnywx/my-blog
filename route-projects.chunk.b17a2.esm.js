@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{GQbC:function(t,e,n){"use strict";n.r(e);var c=n("hosL"),s=n("QRet"),o={};e.default=function(){return Object(s.d)((()=>{document.title="Projects | sunnywang"}),[]),Object(c.h)("div",{className:o.wrap},"projects")}}}]);
+//# sourceMappingURL=route-projects.chunk.b17a2.esm.js.map

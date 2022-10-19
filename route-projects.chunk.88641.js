@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{GQbC:function(n,t,e){"use strict";e.r(t);var c=e("hosL"),i=e("QRet"),o={};t.default=function(){return Object(i.d)((function(){document.title="Projects | Thinking in X"}),[]),Object(c.h)("div",{className:o.wrap},"projects")}}}]);
-//# sourceMappingURL=route-projects.chunk.88641.js.map

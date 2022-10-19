@@ -12,12 +12,6 @@
     "desc": "gatsby 下分页的难点\ngatsby 生成的都是静态网页，数据是通过 graphql 聚合的，这里查询数据不像传统的关系型数据库那样\n直接通过limit, offset来控制分页数据。gatsby 的数据源可能是每个 markdown 经过 nodejs 转换后的纯 json，\n再通过 grap..."
   },
   {
-    "url": "/blog/2020-05/docker-hyperkit-cpu-very-high",
-    "title": "docker hyperkit进程cpu占用超过100%",
-    "date": "2020-05-06",
-    "desc": "解决方法很简单： 在docker desktop 设置里，把 cpu 调成 1 核。\n这样 com.docker.hyperkit 后续 cpu 占用不会超过 100%\n\n"
-  },
-  {
     "url": "/blog/2020-04/be-a-productive-team-member",
     "title": "Be a productive team member",
     "date": "2020-04-08",
@@ -28,5 +22,11 @@
     "title": "django webpack hot reload",
     "date": "2020-04-07",
     "desc": "1. 设置后端环境\n# init python virtrual env\npip install virtualenv\nvirtualenv venv\nsource ./venv/bin/activate\n\npip install django-webpack-loader\n\n2. 设置 djang..."
+  },
+  {
+    "url": "/blog/2020-04/mac-catalina-install-libvips",
+    "title": "Mac 10.15 安装 libvips",
+    "date": "2020-04-06",
+    "desc": "gatsby 的图片处理库sharp很方便，但是 sharp 依赖 c++编写的 libvips。\n当 Mac 升级到 catalina(10.15), brew安装时一直失败，当尝试源码编译，会出现tiff依赖的错误。\n还有zlib在 catalina 默认的 pkg-config的配置zlib...."
   }
 ]

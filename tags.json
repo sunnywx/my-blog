@@ -3,17 +3,11 @@
   "webpack": [
     {
       "u": "/blog/2022-10/reduce-gitalk-bundle",
-      "t": "优化打包gitalk"
+      "t": "gitalk打包优化"
     },
     {
       "u": "/blog/2020-04/django-webpack-hot-reload",
       "t": "django webpack hot reload"
-    }
-  ],
-  "refine": [
-    {
-      "u": "/blog/2022-10/reduce-gitalk-bundle",
-      "t": "优化打包gitalk"
     }
   ],
   "react": [
@@ -30,20 +24,12 @@
     {
       "u": "/blog/2022-10/ways-to-run-jsx-in-node",
       "t": "ways to run jsx in nodejs"
-    },
-    {
-      "u": "/blog/2020-04/note-about-npmrc",
-      "t": "npmrc常用配置"
     }
   ],
-  "misc": [
+  "learning": [
     {
-      "u": "/blog/2022-10/free-site-host",
-      "t": "free site host"
-    },
-    {
-      "u": "/blog/2019-10/from-jekyll-to-gatsby",
-      "t": "From jekyll to gatsby"
+      "u": "/blog/2021-03/feynman-learning-method",
+      "t": "feynman learning method"
     }
   ],
   "wasm": [
@@ -74,12 +60,6 @@
     {
       "u": "/blog/2020-10/gatsby-add-pagination",
       "t": "gatsby page add pagination"
-    }
-  ],
-  "docker": [
-    {
-      "u": "/blog/2020-05/docker-hyperkit-cpu-very-high",
-      "t": "docker hyperkit进程cpu占用超过100%"
     }
   ],
   "jobs": [

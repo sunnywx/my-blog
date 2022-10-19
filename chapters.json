@@ -16,10 +16,6 @@
       {
         "title": "google search operator",
         "url": "/blog/2019-10/google-advanced-operators"
-      },
-      {
-        "title": "From jekyll to gatsby",
-        "url": "/blog/2019-10/from-jekyll-to-gatsby"
       }
     ]
   },
@@ -38,12 +34,6 @@
         "url": "/blog/2020-10/gatsby-add-pagination"
       }
     ],
-    "05": [
-      {
-        "title": "docker hyperkit进程cpu占用超过100%",
-        "url": "/blog/2020-05/docker-hyperkit-cpu-very-high"
-      }
-    ],
     "04": [
       {
         "title": "Be a productive team member",
@@ -54,28 +44,28 @@
         "url": "/blog/2020-04/django-webpack-hot-reload"
       },
       {
-        "title": "npmrc常用配置",
-        "url": "/blog/2020-04/note-about-npmrc"
-      },
-      {
         "title": "Mac 10.15 安装 libvips",
         "url": "/blog/2020-04/mac-catalina-install-libvips"
+      }
+    ]
+  },
+  "2021": {
+    "03": [
+      {
+        "title": "feynman learning method",
+        "url": "/blog/2021-03/feynman-learning-method"
       }
     ]
   },
   "2022": {
     "10": [
       {
-        "title": "优化打包gitalk",
+        "title": "gitalk打包优化",
         "url": "/blog/2022-10/reduce-gitalk-bundle"
       },
       {
         "title": "ways to run jsx in nodejs",
         "url": "/blog/2022-10/ways-to-run-jsx-in-node"
-      },
-      {
-        "title": "free site host",
-        "url": "/blog/2022-10/free-site-host"
       },
       {
         "title": "react different render ways",
