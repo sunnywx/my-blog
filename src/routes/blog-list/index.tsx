@@ -11,7 +11,7 @@ type Props = {
   pn?: string; // page number
 }
 
-const pageSize=5
+const pageSize=10
 
 function BlogList({pn}: Props) {
   const [blogs, setBlogs] = useState([])
@@ -25,7 +25,12 @@ function BlogList({pn}: Props) {
   }, [])
 
   useEffect(() => {
-    if(pageIds === undefined) return
+    setLoading(true)
+
+    if(pageIds === undefined) {
+      setLoading(false)
+      return
+    }
 
     if(pageNo > 0 && pageNo <= total){
       fetch(`/page-${pageNo}.json`)
@@ -33,7 +38,11 @@ function BlogList({pn}: Props) {
         .then(blogs => {
           setBlogs(blogs)
           setLoading(false)
-        }).catch(err=> setLoading(false))
+        })
+        .catch(err=> {
+          console.error(`fetch page ${pageNo} failed`, err)
+          setLoading(false)
+        })
     }
   }, [pageIds.value, pageNo])
 
@@ -90,20 +99,23 @@ function BlogList({pn}: Props) {
 
   return (
     <div className={style.wrap}>
-      {blogs.map(({url, title, date, desc}) => {
+      {blogs.map(({url, title, date, desc, snapshot}) => {
         return (
           <div key={url} className={style.pg} onClick={()=> route(url)}>
             <div>
               <span>{title}</span>
               <span>{dayjs(date).format('YYYY-MM-DD')}</span>
             </div>
-            {/*<p>{desc}</p>*/}
-            <p dangerouslySetInnerHTML={{__html: desc}} />
+            <div>
+              <p dangerouslySetInnerHTML={{__html: desc}} />
+              {Array.isArray(snapshot) && (
+                <img src={snapshot[0]} alt="" />
+              )}
+            </div>
           </div>
         )
       })}
-      {renderPager()}
-
+      {!loading && renderPager()}
     </div>
   );
 }

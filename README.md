@@ -41,5 +41,8 @@ yarn dep:vps
 1. `npx gh-pages -d build -b gh-page` fatal: A branch named 'gh-page' already exists.
     解决方法: `rm -rf node_modules/.cache/gh-pages`
 
-## License 
+2. 如果报 openssl错误, 就是node版本太高, 建议降到 v14, 或者在script前加 `NODE_OPTIONS=--openssl-legacy-provider`
+
+## License
+
 MIT

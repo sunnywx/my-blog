@@ -1,8 +1,11 @@
-import {h} from 'preact'
+import {h, Fragment} from 'preact'
 import {useEffect, useState, useContext, useRef} from 'preact/hooks'
 import cs from 'classnames'
+import { Route, Router } from 'preact-router';
+import Match from 'preact-router/match'
 import {AppCtx} from '../../store/app-state'
-import MonthSection from "./month-section";
+import BlogChapters from "./blog-chapters";
+import TopicChapters from "./topic-chapters";
 
 import style from './index.scss'
 
@@ -10,33 +13,14 @@ type Props = {
   className?: string;
 }
 
-// todo
-// const chapterUrl=`http://127.0.0.1:9876/chapters.json`
-const chapterUrl=`/chapters.json`
-
 const threshold=768 // viewpoint width
 
-// dec sort
-function compare(a, b){
-  if(a>b) return -1;
-  if(a<b) return 1;
-  return 0;
-}
-
 function SideNav(props: Props) {
-  const [chapters, setChapters]=useState({})
   const {hideSider}=useContext(AppCtx)
   const navRef=useRef(null)
   let toggleRef: any=null
 
   useEffect(()=> {
-    fetch(chapterUrl)
-      .then(res=> res.json())
-      .then(data=> {
-        // console.log('chapters: ', data)
-        setChapters(data)
-      })
-
     handleResize()
     window.addEventListener('resize', handleResize);
 
@@ -67,17 +51,30 @@ function SideNav(props: Props) {
 
   return (
     <div className={cs(style.nav, {[style.hidden]: hideSider.value})} ref={navRef}>
-      {/* use hideSider will not trigger re-render */}
-      {Object.keys(chapters).sort(compare).map(year=> {
-        return (
-          <div key={year} className={style.year}>
-            <p>{year}年</p>
-            {Object.keys(chapters[year]).sort(compare).map((mon, idx)=> {
-              return <MonthSection month={mon} items={chapters[year][mon]} key={idx} />
-            })}
-          </div>
-        )
-      })}
+      {/*<Router>*/}
+      {/*  <Route component={TopicChapters} path='/topics/:slug*' />*/}
+      {/*  <Route component={TopicChapters} path='/topic/:slug*' />*/}
+      {/*  <Route component={BlogChapters} path='/:slug*' />*/}
+      {/*</Router>*/}
+      <Match path='/:slug*'>
+        {({matches, path}) => {
+          // console.log('path: ', path, matches)
+          const isTopicPage=/\/topic\/?(.*)/.exec(path)
+          const isProjectPage=/\/projects\/?(.*)/.exec(path)
+          
+          if(isProjectPage || path === '/about'){
+            hideSider.value=true
+            return null
+          }
+          
+          hideSider.value=false
+          if(isTopicPage){
+            return <TopicChapters />
+          }
+  
+          return <BlogChapters />
+        }}
+      </Match>
     </div>
   );
 }

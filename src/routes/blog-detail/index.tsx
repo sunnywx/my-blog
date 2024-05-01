@@ -4,10 +4,10 @@ import {usePrerenderData} from '@preact/prerender-data-provider'
 import {marked} from 'marked'
 import day from 'dayjs'
 import {AppCtx} from "../../store/app-state";
-import Comment from "./comment";
+// import Comment from "./comment";
 
 import style from './index.scss'
-import {VscArrowLeft, VscArrowRight, VscInfo, VscTag} from "react-icons/vsc";
+import {VscAccount, VscArrowLeft, VscArrowRight, VscInfo, VscTag} from "react-icons/vsc";
 
 type Props = {
   className?: string;
@@ -32,7 +32,7 @@ function BlogDetail(props: Props) {
   const {pageIds}=useContext(AppCtx)
 
   const ids=pageIds.value
-  const blogUrl=normalizeUrl(['/blog', props.date, props.slug].join('/'))
+  const blogUrl=normalizeUrl(['/blog', props.slug].join('/'))
   const blogIdx=ids.findIndex(v=> v.u === blogUrl)
   const title=ids[blogIdx]?.t
 
@@ -75,7 +75,10 @@ function BlogDetail(props: Props) {
               )
             })}
           </div>
-          <span><VscInfo /> {day(data.date).format('YYYY-MM-DD')}</span>
+          <span>
+            <span><VscAccount /> {data.author || 'wangxi'}</span>
+            <span><VscInfo /> {day(data.date).format('YYYY-MM-DD')}</span>
+          </span>
         </div>
       </div>
       <div className={style.article} dangerouslySetInnerHTML={{__html: parsed}} />
@@ -87,7 +90,7 @@ function BlogDetail(props: Props) {
           <a href={next.u}>{next.t} <VscArrowRight /></a>
         )}
       </div>
-      <Comment id={blogUrl} title={title} />
+      {/*<Comment id={blogUrl} title={title} />*/}
     </div>
   );
 }

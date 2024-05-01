@@ -3,12 +3,9 @@ const express=require('express')
 const cors=require('cors')
 const morgan=require('morgan')
 const chokidar = require('chokidar')
-const watchBlogs=require('./watch-blogs')
+const watchArticles=require('./watch-articles')
 
 const resolve=d=> path.resolve(process.cwd(), d)
-
-let allBlogs=require('../public/blog-data.json')
-const fname=resolve('public/blog-data.json')
 
 const app=express()
 const port=9876
@@ -17,12 +14,20 @@ app.use(morgan('dev'))
 app.use(cors())
 app.use('/', express.static(path.resolve(__dirname, 'public')));
 
-chokidar.watch(fname).on('change', (path)=> {
-  delete require.cache[fname]
-  allBlogs=require('../public/blog-data.json')
+let articles=[]
+const fname=resolve('public/articles.json')
+
+chokidar.watch(fname).on('add', (path)=> {
+  articles=require('../public/articles.json')
 })
 
-watchBlogs()
+chokidar.watch(fname).on('change', (path)=> {
+  // hot reload
+  delete require.cache[fname]
+  articles=require('../public/articles.json')
+})
+
+watchArticles()
 
 // proxy preload data for each page
 app.get('/preload-data/:slug*', (req, res)=> {
@@ -32,7 +37,7 @@ app.get('/preload-data/:slug*', (req, res)=> {
   let content=''
 
   if(slug){
-    let found=allBlogs.find(v=> v.url === slug)
+    let found=articles.find(v=> v.url === slug)
     if(found){
       return res.json(found)
     }

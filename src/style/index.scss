@@ -28,11 +28,6 @@ p {
 	display: flex;
 	height: calc(100% - var(--header-height));
 	/*gap: 1rem;*/
-
-	@media (max-width: 600px) {
-		top: var(--shrink-header-height);
-		height: calc(100% - var(--shrink-header-height));
-	}
 }
 
 .main > div:last-child {
@@ -71,12 +66,34 @@ p {
 	img {
 		width: 100%;
 	}
+
+	blockquote {
+		margin: 0;
+		border-left: 5px solid #7a7a7a;
+		font-style: italic;
+		padding: 1.33em;
+		text-align: left;
+	}
+
+	p code {
+		background: #dcdcd5;
+		border-radius: 12px;
+		padding: 0 3px;
+		display: inline-block;
+		color: #333;
+		margin: 3px 6px;
+	}
+
 }
 
 html[data-theme="dark"] {
 	body > * {
 		background: var(--bg-dark);
 		color: var(--color-dark);
+	}
+
+	a {
+		color: #ccc;
 	}
 
 }

@@ -1,0 +1,52 @@
+.tree{
+}
+
+.node {
+  border-left: 1px dashed gray;
+  &.fold {
+    //background: var(--hl);
+    > .child {
+      transform: translateY(-9999px);
+      height: 0;
+    }
+  }
+
+  .dir, .leaf {
+    cursor: pointer;
+    &::before {
+      content: '--';
+      color: gray;
+      margin-right: 3px;
+    }
+    &:hover{
+      background: var(--hl);
+    }
+  }
+  .dir {
+    margin: 5px auto;
+    font-weight: 500;
+    font-size: 1.1em;
+    svg {
+      margin-right: 5px;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      color: grey;
+    }
+  }
+  .leaf {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    margin: 3px auto;
+    &.active {
+      background: var(--hl);
+    }
+  }
+  .child {
+    margin-left: 10px;
+    transform: translateY(0);
+    height: unset;
+    //transition: all 0.5s ease;
+  }
+}

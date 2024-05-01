@@ -1,5 +1,15 @@
 .wrap {
-  //@media (min-width: 1080px) {
-  //  margin: 0 200px;
-  //}
+  position: relative;
+  > div {
+    //width: 100%;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (max-width: 960px) {
+      width: 100%;
+    }
+  }
 }

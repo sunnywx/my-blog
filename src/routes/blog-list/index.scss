@@ -34,10 +34,42 @@
       }
     }
 
-    > p {
-      font-size: 1rem;
-      height: max-content;
+    > div:last-child {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      &:hover{
+        img {
+          transform: scale(1.1);
+        }
+      }
+      @media (max-width: 768px) {
+        & {
+          flex-direction: column-reverse;
+          justify-content: unset;
+          gap: unset;
+
+          img {
+            width: 100%;
+            height: auto;
+            max-width: unset !important;
+            margin-top: 1rem;
+          }
+        }
+      }
+      p {
+        font-size: 1rem;
+        height: max-content;
+      }
+      img {
+        max-width: 200px;
+        transition: transform 0.3s ease-in-out;
+        [data-theme="light"] & {
+          mix-blend-mode: multiply;
+        }
+      }
     }
+
   }
 
   .paginator {

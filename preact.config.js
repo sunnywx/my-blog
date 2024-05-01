@@ -26,7 +26,7 @@ export default (config, env, helpers, options) => {
       host: '127.0.0.1',
       static: ['public'],
       proxy: {
-        '/blog/**/preact_prerender_data.json': {
+        '/(blog|topic)/**/preact_prerender_data.json': {
           target: `${prefix}/preload-data`
         },
         // '/': {

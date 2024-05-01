@@ -41,13 +41,16 @@
           }
         }
       }
-      > span{
+      span{
         display: inline-flex;
         align-items: center;
         min-width: max-content;
         color: gray;
         svg {
           margin-right: 5px;
+        }
+        > span:first-child {
+          margin-right: 10px;
         }
       }
     }
