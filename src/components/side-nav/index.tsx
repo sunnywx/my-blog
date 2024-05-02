@@ -41,7 +41,7 @@ function SideNav(props: Props) {
 
   function handleClickOutside(ev){
     toggleRef=document.getElementById('toggle-side-nav')
-    if(typeof window !== 'undefined' && window.innerWidth > 768) return;
+    if(typeof window !== 'undefined' && window.innerWidth > threshold) return;
     if(toggleRef && toggleRef.contains(ev.target)) return;
     // @ts-ignore
     if(navRef && !navRef?.current?.contains(ev.target)){
@@ -67,7 +67,6 @@ function SideNav(props: Props) {
             return null
           }
           
-          hideSider.value=false
           if(isTopicPage){
             return <TopicChapters />
           }

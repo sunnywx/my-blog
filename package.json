@@ -14,7 +14,8 @@
     "lint": "eslint src",
     "test": "jest",
     "deploy": "rsync -avz --delete build/ bwg:/var/www/html",
-    "dep:github": "npx gh-pages -d build -b gh-page"
+    "dep:github": "npx gh-pages -d build -b gh-page",
+    "pm2": "pm2 start npm --name 'run-wx-blog' -- run serve"
   },
   "dependencies": {
     "@preact/signals": "^1.1.1",
