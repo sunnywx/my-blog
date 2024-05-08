@@ -1,5 +1,6 @@
 import {h} from 'preact'
 import Match from "preact-router/match";
+import {route} from 'preact-router'
 import cs from "classnames";
 import {useState} from 'preact/hooks'
 import {VscChevronRight, VscChevronDown} from 'react-icons/vsc'
@@ -29,8 +30,13 @@ function MonthSection({month, items}: Props) {
         {items.map(v=> (
           <Match path={v.url} key={v.url}>
             {({matches})=> (
-              <li className={cs({[style.active]: matches})}>
-                <a href={v.url}>{v.title}</a>
+              <li 
+              className={cs({[style.active]: matches})} 
+              style={{cursor: 'pointer'}} 
+              onClick={()=> route(v.url)}
+              >
+                {v.title}
+                {/* <a href={v.url}>{v.title}</a> */}
               </li>
             )}
           </Match>
