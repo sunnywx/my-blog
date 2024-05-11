@@ -2,7 +2,7 @@
 ==
 
 
-## 网课
+## online course
 
 吴恩达(Andrew Ng)的机器学习系列课程
 
@@ -29,7 +29,9 @@
 频，讲义和作业。可以自己上手写代码。
 > PPT做的很好，经常看见知乎里面对某某模型的图例就是截图自这个课程的PPT
 
-书籍
+## books
+
+- Llya 推荐论文： [!https://arc.net/folder/D0472A20-9C20-4D3F-B145-D2865C0A9FEE](https://arc.net/folder/D0472A20-9C20-4D3F-B145-D2865C0A9FEE/)
 
 - Ian Goodfellow、Yoshua Bengio和Aaron Courville合著的《深度学习》
 （Deep Learning）
